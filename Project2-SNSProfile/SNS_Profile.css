@@ -1,0 +1,93 @@
+body {
+  background-color: #f7f9fc;
+}
+.white-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0.5px 0.5px 2px 1px #eee; /* 첫 두개의 값은 그림자의 x,y축 이동량, 3번째 값은 blur, 4번째 값은 spread, 마지막은 색상 */
+}
+.btn-style {
+  background-color: lightskyblue;
+  color: white;
+  border: none
+}
+.location-style {
+  color: lightskyblue;
+}
+
+
+/* 첫번째 영역 오른쪽 */
+.profile-content1 {
+  border-left: 1px solid #eee;
+  padding-left: 50px;
+}
+
+
+.hrLine {
+  border-bottom: 1px solid lightgray;
+}
+
+
+/* 두번째 영역 */
+.profile-container {  /* 세번째 영역 포함 */
+  padding: 5px;
+  margin-top: 20px;
+}
+
+
+/* 두번째 영역의 1번박스 */
+.content-box1 p {
+  line-height: 1rem;
+}
+
+
+/* 두번째 영역의 2번박스 top*/
+.content-box2-top {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30px;
+}
+/* 두번째 영역의 2번박스 bottom*/
+.pill {
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 100px;
+  padding: 3px 12px 5px;
+  margin: 10px 2px 5px 0px;
+}
+
+
+/* 두번째 영역의 3번박스 top */
+.content-box3 {
+  text-align: center;
+  line-height: 2.5rem;
+}
+.fire-icon {
+  font-size: 70px;
+  color: lightskyblue;
+}
+/* 두번째 영역의 3번박스 bottom */
+.content-box4 {
+  border-bottom: 1px solid lightgray;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .content-box3 p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pprofile-content1 {
+    border-left: hidden;
+  }
+  .pill {
+    font-size: 14px;
+  }
+}
+/* 
+@media screen and (max-width: 576px) {
+} */
