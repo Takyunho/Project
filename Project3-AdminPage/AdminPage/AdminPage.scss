@@ -1,0 +1,124 @@
+@use 'reset';
+
+%shadow {
+  background-color: white;
+  border: 1px solid lightgrey;
+  box-shadow: 0.5px 0.5px 5px 1px lightgrey;
+  // 첫 두개의 값은 그림자의 x,y축 이동량, 3번째 값은 blur, 4번째 값은 spread, 마지막은 색상
+}
+
+// 왼쪽 사이드바
+.left-bar {
+  background-color: rgb(73, 42, 184);
+  color: white;
+  z-index: 5;
+  width: 150px;
+  height: 100vh;
+  position: fixed;              //스크롤시 안내려가도록 픽스
+  transition: all 0.5s;         // 트랜지션 시작화면
+  transform: translateX(-100px);
+  
+  &:hover {
+    transform: translateX(0px);   //트랜지션 최종화면
+  }
+}
+
+// 왼쪽 사이드바 각각의 버튼(아이콘)
+.left-bar-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  margin: 10px -2px 0px 10px;
+  transition: all 0.5s;         // 버튼 트랜지션 시작
+  transform: translateX(100px); // 버튼 초기위치
+}
+.left-bar:hover .left-bar-btn{
+  transform: translateX(0px);   // 트랜지션 후 버튼 최종위치
+}
+
+// 내용(content)영역
+.content-container {
+  margin-left: 50px;            // 사이드 바로부터 50px 떨어지도록 (사이드바가 50px이므로)
+}
+
+// 맨위 nav 영역
+.nav-bar {
+  @extend %shadow;
+  // align-items: center; // 수직으로 중앙정렬
+  // justify-content: center; //수평으로 중앙정렬
+}
+
+// 검색박스(input)
+.search-input {
+  width: 200px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: width 1s;
+
+  &:focus {
+    width: 400px;
+  }
+}
+
+// 검색박스(button)
+.search-btn {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  background-color: rgb(63, 58, 58);
+  color: white;
+}
+
+// 벨, 편지 모양 버튼
+.bell-btn, .letter-btn {
+  background: none;
+  color: gray;
+  border: none;
+  display: block;
+  margin: 0px 20px 0px 10px;
+}
+// 뱃지 알림
+.alram {
+  width: 15px;
+  padding: 3px;
+  position: absolute;
+  left: 25px;
+  bottom: 4px;
+}
+
+// 대쉬보드 영역
+// 각각의 카드(박스)
+%dashboard-box {
+  padding: 0.5rem;
+  border-left-width: 0.25rem;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0.5px 0.5px 5px 1px lightgrey;
+  margin-bottom: 1rem;
+  i {
+    color: gray;
+  }
+}
+.dashboard-box1 {
+  @extend %dashboard-box;
+  border-left-color: #5bc0de;
+}
+.dashboard-box2 {
+  @extend %dashboard-box;
+  border-left-color: lightgreen;
+}
+.dashboard-box3 {
+  @extend %dashboard-box;
+  border-left-color: rgb(73, 42, 184);
+}
+.dashboard-box4 {
+  @extend %dashboard-box;
+  border-left-color: rgb(231, 193, 67);
+}
+
+// 차트 & 태스크 영역
+.chat-box, .Tasks-box {
+  @extend %shadow;
+  margin-top: 1rem;
+  
+}
