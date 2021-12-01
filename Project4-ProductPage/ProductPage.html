@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="ProductPage.css">
+  <title>ProductPage</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">내집꾸미기</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-white-50" aria-current="page" href="#">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">온라인 집들이</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">스토어</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">전문가</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#">시공 견적</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div style="flex-grow: 1;"></div> -->
+      <div>
+        <a class="btn btn-light btn-md logIn-btn" href="#" role="button">로그인</a>
+        <a class="btn btn-light btn-md logIn-btn" href="#" role="button">회원가입</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div>
+      <input class="form-control mt-5" type="search" placeholder="검색어를 입력해주세요." aria-label="Search">
+    </div>
+
+    <div class="mt-5 container">
+      <div class="row">
+        <div class="col-lg-8 col-md-12">
+          <h2 class="mt-3">모든 상품 리스트</h2>
+          <div class="row cardGroup">
+
+            <!-- 데이터바인딩 하면 되므로, 주석처리 -->
+            <!-- <div class="col-lg-3 mt-3">
+              <div class="card h-100">
+                <img src="IMG/pr2.JPG"class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">식기세척기</h5>
+                  <p class="card-text">세척나라</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">가격 : </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 mt-3">
+              <div class="card h-100">
+                <img src="IMG/pr2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">원목 침대프레임</h5>
+                  <p class="card-text">침대나라</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">가격 : </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 mt-3">
+              <div class="card h-100">
+                <img src="IMG/pr3.JPG" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">천연 디퓨저세트</h5>
+                  <p class="card-text">향기나라</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">가격 : </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 mt-3">
+              <div class="card h-100">
+                <img src="IMG/pr4.JPG" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">시원한 서큘레이터</h5>
+                  <p class="card-text">바람나라</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">가격 : </small>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 ">
+          <div>
+            <h2 class="mt-3">장바구니</h2>
+            <div class="card border-dark mt-4 mb-5">
+              <div class="card-body text-success ">
+                <div class="card border-dark p-5 bg-secondary text-white">
+                  <p class="card-text">이곳에 상품을 놓아주세요.</p>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-dark">
+                <p class="text-right">총 합계 : 0원</p>
+              </div>
+              <button type="button" class="d-grid btn btn-secondary">구매하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <!-- 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- 부트스트랩 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+  <script src="ProductPage.js"></script>
+</body>
+
+</html>
