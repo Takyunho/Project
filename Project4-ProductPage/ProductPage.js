@@ -27,6 +27,24 @@ $.ajax({
   })
 
 
+// 상품 검색 기능
+
+var 입력값 = $('#searchInput').val() // searchInput에 입력한 값
+
+// if(입력값 == )
+
+
+// 만약에 searchInput에 입력한 값(입력값)이 상품.product_name에 들어있으면
 
 
 
+// 만약 상품 제목에서 input에 입력한 글자가 들어 있으면
+// 
+// 검색창에 입력된 값이 상품.product_name과 같으면
+// 그 상품만 보여줘(노란색 배경을 입혀서 보여줘)
+// 그렇지 않으면 안보여줘
+
+
+
+
+// console.log(데이터.product_name.indexOf('입력값'))
