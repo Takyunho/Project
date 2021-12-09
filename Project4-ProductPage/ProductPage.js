@@ -30,12 +30,12 @@ function getProducts() {
     </div>
   </div>
 </div>`
-
+      // 데이터 바인딩
       $('.cardGroup').append(초기템플릿);
 
     })
   })
-    .fail(function () {
+    .fail(function () {                     // 실패했을경우
       console.log('데이터를 불러오는데 실패');
     })
 }
@@ -95,7 +95,7 @@ $(function () {
       console.log(price);
 
 
-      //드롭했을 시 그 밑에 상품목록 생성해주기
+      // ✅ 드롭했을 시 그 밑에 상품목록 생성해주기
       var 장바구니 = $(`
       <div id="basket">
         <div class="card h-100 dragCard" id="cardBox">
@@ -127,6 +127,13 @@ $(function () {
       setTotalSum();    // 처음 총합계 금액 띄우기
 
 
+      // ❗ 장바구니에 중복상품이 있으면 중복방지
+      // var productInBasket = $('#dropTemplate');
+      // if (productInBasket.length) {       // 중복되는 상품이 있을 경우
+      //   alert('이미 장바구니에 담긴 상품입니다.');
+      //   return;
+      // }
+
 
       // 장바구니 항목에 있는 것들의 합계
       // id가 amount인 요소의 값이 바뀔때마다 안의 함수 실행
@@ -143,10 +150,9 @@ $(function () {
       장바구니.find("input[type='number']").on('input', function () {
         var 합 = parseInt(price, 10) * $(this).val(); // price값을 10진수 정수로 변환
         장바구니.find('.sum').text(합); // ❗ sum은 클래스로 해야됨. id로하면 중복 허용이 안돼서 적용이 안돼
-        
+
         setTotalSum();
       });
-
 
 
       // ✅ 버튼 누르면 장바구니 안의 상품 지우기
@@ -158,8 +164,6 @@ $(function () {
       // $('.btn-delete').click(function () {});
 
 
-
-      
       // ✅ 총합계
       // 셋 토탈썸 함수는 장바구니가 변동될 때마다 총 금액을 계산해주는 기능 
       function setTotalSum() {
@@ -172,15 +176,138 @@ $(function () {
         $('#totalSum').text(totalSum);
       }
 
-
-
-
-
-
-
-
-      // 2. 구매하기 누르면 성함 연락처를 입력할 수 있는 모달창 띄워주기
-
     }
   })
 });
+
+
+
+// ✅ 구매하기 누르면 성함 연락처를 입력할 수 있는 모달창 띄워주기(위에서 아래로, 최종화면)
+$('.btn-buy').click(function () {
+  var 장바구니상품 = $('#dropTemplate *');  // 드롭템플릿 안의 모든 요소를 장바구니리스트 변수에 담아
+  
+  // 장바구니안에 상품이 없으면
+  if (장바구니상품.length == 0) {         
+    alert('장바구니가 비어있습니다.');                // 장바구니가 비어있다고 알려주기
+    return;
+  } else {                                            // 장바구니에 상품 있으면
+    $('.black-background').addClass('down-slide');    // 모달창 보여주기
+  }
+});
+// 닫기버튼 눌렀을때 모달창 아래서 위로
+$('#close').click(function () {
+  $('.black-background').removeClass('down-slide');
+  $('#name-alert').hide();
+  $('#tel-alert').hide();
+});
+
+
+
+
+// ✅ 모달창에서 키다운 이벤트 발생시
+$(function () {
+  $(".phone-number-check").on('keydown', function (e) {
+
+    var trans_num = $(this).val().replace(/-/gi, '');   // 숫자만 입력받기
+    var k = e.keyCode;
+
+    if (trans_num.length >= 11 && ((k >= 48 && k <= 126) || (k >= 12592 && k <= 12687 || k == 32 || k == 229 || (k >= 45032 && k <= 55203)))) {
+      e.preventDefault();
+    }
+  }).on('blur', function () { // 포커스를 잃었을때 실행합니다.
+    if ($(this).val() == '') return;
+
+    var trans_num = $(this).val().replace(/-/gi, ''); // 기존 번호에서 - 를 삭제합니다.
+
+    if (trans_num != null && trans_num != '') {               // 입력값이 있을때만 실행합니다.
+
+      if (trans_num.length == 11 || trans_num.length == 10) { // 총 핸드폰 자리수는 11글자이거나, 10자여야 합니다.
+      
+        var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;  // 유효성 체크
+        
+        if (regExp_ctn.test(trans_num)) {
+          // 유효성 체크에 성공하면 하이픈을 넣고 값을 바꿔줍니다.
+          trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");
+          $(this).val(trans_num);
+        }
+        else {
+          alert("유효하지 않은 전화번호 입니다.");
+          $(this).val("");
+          $(this).focus();
+        }
+      }
+      else {
+        alert("유효하지 않은 전화번호 입니다.");
+        $(this).val("");
+        $(this).focus();
+      }
+    }
+  });
+});
+
+
+
+// 구매완료 누른 후 폼이 전송될때
+$('form').on('submit', function (e) {
+  // 입력한 이름 검증하기
+  var 입력한이름 = $('#name').val();
+  var 이름검증 = /^[가-힣]{2,4}$/;     // 한글 이름 2~4자 이내
+
+  if (입력한이름 == '') {
+    e.preventDefault();                               // 만약에 입력한 이름이 공백이면
+    $('#name-alert').html('이름을 입력하지 않았습니다.');      // html 변경하고
+    $('#name-alert').show();                                  //#name-alert 보여줘(show)
+  } else if (이름검증.test(입력한이름) == false) {    // 만약에 입력한 이름이 이름검증과 맞지 않으면
+    e.preventDefault();                                       // 폼의 전송을 막는 코드
+    $('#name-alert').html('이름이 올바르지 않습니다.');        // html 변경하고
+    $('#name-alert').show();                                  //#name-alert 보여줘(show)
+  } else {
+    e.preventDefault(); 
+    $('#name-alert').hide();
+  }
+
+  if (입력한이름.length > 4) {                        // 만약에 입력한이름의 길이가 4글자를 넘어가면
+    e.preventDefault();
+    $('#name-alert').html('이름은 4글자 이하로 적어주세요.');  // html 변경하고
+    $('#name-alert').show();                                  //#name-alert 보여줘(show)
+  }
+
+
+  // 입력한 연락처 검증하기
+  var 입력한연락처 = $('#tel').val();
+  var 연락처검증 = /^\d{2,3}-\d{3,4}-\d{4}$/;   // 일반 전화번호 정규식
+
+  if (입력한연락처 == '') {                           // 만약에 입력한연락처가 공백이면
+    e.preventDefault();
+    $('#tel-alert').html('연락처를 입력하지 않았습니다.');
+    $('#tel-alert').show();
+  } else if (연락처검증.test(입력한연락처) == false) {
+    e.preventDefault();
+    $('#tel-alert').html('연락처가 올바르지 않습니다.');
+    $('#tel-alert').show();
+  } else {
+    e.preventDefault();
+    $('#tel-alert').hide();
+  }
+
+  if (입력한연락처.length > 13) {
+    e.preventDefault();
+    $('#tel-alert').html('연락처는 9 ~ 11 자리로 적어주세요.');
+    $('#tel-alert').show();
+  }
+});
+
+
+// ❗ 위의 검증을 거쳐 구매완료가 되면,,
+// 구매'완료' 누르면 영수증 이미지 띄워주기(canvas 태그 사용)
+// $('.buy-completion-Btn').click(function () {         // 구매완료 버튼 누르면 안에 함수 실행
+
+
+
+
+
+// });
+
+
+
+

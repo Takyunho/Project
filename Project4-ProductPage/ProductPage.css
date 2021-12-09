@@ -8,9 +8,38 @@ div {
 }
 
 
-
-
-
 .highlight {
   background-color: yellow;
+}
+
+/* 모달창 */
+.black-background {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: translateY(-2000px);
+  transition: all 1s;
+}
+
+.down-slide {
+  transform: translateY(0px);
+}
+
+.white-background {
+  background: white;
+  width: 70%;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+#name-alert {
+  display: none;
+}
+#tel-alert {
+  display: none;
 }

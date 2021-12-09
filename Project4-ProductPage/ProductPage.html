@@ -8,12 +8,35 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="stylesheet" href="ProductPage.css">
-  <!-- 제이쿼리 CSS -->
+  <!-- 제이쿼리 UI CSS -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <title>ProductPage</title>
 </head>
 
 <body>
+  <!-- 모달창은 보통 맨 위에다가 작성 -->
+  <div class="black-background">
+    <div class="white-background">
+
+      <!-- 모달창 내부 폼 -->
+      <form> <!--action="login.php"-->
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="성함입력 (2 ~ 4글자)" id="name">
+          <p id="name-alert">성함을 올바르게 적어주세요</p>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" class="form-control phone-number-check" placeholder="-빼고 숫자입력( 9 ~ 11숫자)" id="tel">
+          <p id="tel-alert">연락처를 올바르게 적어주세요</p>
+        </div>
+        <button type="submit" class="btn btn-primary buy-completion-Btn">구매완료</button>
+        <button type="button" class="btn btn-primary" id="close">닫기</button>
+      </form>
+    </div>
+  </div>
+
+
   <!-- 맨위 메뉴 -->
   <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
@@ -160,7 +183,7 @@
 
               </div>
               <p class="text-right mr-2">총 합계 : <span id="totalSum">0</span></p>
-              <button type="button" class="d-grid btn btn-secondary">구매하기</button>
+              <button type="button" class="d-grid btn btn-secondary btn-buy">구매하기</button>
             </div>
           </div>
         </div>
@@ -178,7 +201,8 @@
   <!-- 제이쿼리 -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <!-- 제이쿼리 UI CDN -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
   <!-- 부트스트랩 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
