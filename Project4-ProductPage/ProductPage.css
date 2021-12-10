@@ -43,3 +43,12 @@ div {
 #tel-alert {
   display: none;
 }
+
+
+#canvas-popup {
+  position: relative;
+}
+#canvas {
+  position: absolute;
+  margin: 0 auto;
+}

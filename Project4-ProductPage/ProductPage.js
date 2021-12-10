@@ -42,16 +42,13 @@ function getProducts() {
 
 
 
-
 // ✅ 검색어 필터기능
 $('#searchInput').keyup(function () {    // keyup 이벤트 = 키보드의 키를 눌렀다 뗄 때 요소에 이벤트를 발생
   var 입력값 = $('#searchInput').val();                     // searchInput에 입력한 값
   var 상품박스 = document.querySelectorAll('#cardBox');    // 노드리스트
   var 상품제목 = $('.card-title');
 
-
   for (let i = 0; i < 상품박스.length; i++) {
-
     // 만약에 searchInput에 입력한 값(입력값)이 상품.product_name에 들어있으면
     if (상품제목[i].innerText.indexOf(입력값) > -1) {
 
@@ -101,9 +98,9 @@ $(function () {
         <div class="card h-100 dragCard" id="cardBox">
           <img src="${img.attr('src')}" class="card-img-top h-100 w-auto">
           <div class ="card-body">
-          <h5 class ="card-title text-center">${productName}</h5>
-          <p class ="card-text text-center">${brandName}</p>
-
+          <h5 class ="card-title text-center productName">${productName}</h5>
+          <p class ="card-text text-center brandName">${brandName}</p>
+          <p class="card-text text-center"><small class="text-muted drop-price">가격 : ${price}</small></p>
           <div class ="input-group input-group-sm mb-3">
           <div class ="row">
           <div class ="input-group-prepend col-3">
@@ -114,9 +111,8 @@ $(function () {
           </div>
           </div>
           </div>
-
           <div class ="card-footer text-right">
-          <small class="text-muted">가격 : <span class="price sum">${price}</span></small>
+          <small class="text-muted">가격 : <span class="sum">${price}</span></small>
           </div>
         </div>
       </div>
@@ -137,7 +133,7 @@ $(function () {
 
       // 장바구니 항목에 있는 것들의 합계
       // id가 amount인 요소의 값이 바뀔때마다 안의 함수 실행
-      // ❗ find 함수를 안쓰고 아래처럼 하면 금액이 이상해짐.... 
+      // ❗ find 함수를 안쓰고 아래처럼 하면 금액이 이상해짐....
       // $('.amount').on('input', function () {
       //   // 합계는 수량 X 가격
       //   var 합계 = parseInt(price, 10) * $('.amount').val();  
@@ -184,10 +180,16 @@ $(function () {
 
 // ✅ 구매하기 누르면 성함 연락처를 입력할 수 있는 모달창 띄워주기(위에서 아래로, 최종화면)
 $('.btn-buy').click(function () {
+  $('#name').val('');     // 인풋 안의 값 비우기
+  $('#tel').val('');      // 인풋 안의 값 비우기
+  // 미리 그려져 있던 캔버스 지우기
+  // const context = canvas.getContext('2d');
+  // context.clearRect(0, 0, canvas.width, canvas.height);
+
   var 장바구니상품 = $('#dropTemplate *');  // 드롭템플릿 안의 모든 요소를 장바구니리스트 변수에 담아
-  
+
   // 장바구니안에 상품이 없으면
-  if (장바구니상품.length == 0) {         
+  if (장바구니상품.length == 0) {
     alert('장바구니가 비어있습니다.');                // 장바구니가 비어있다고 알려주기
     return;
   } else {                                            // 장바구니에 상품 있으면
@@ -197,16 +199,17 @@ $('.btn-buy').click(function () {
 // 닫기버튼 눌렀을때 모달창 아래서 위로
 $('#close').click(function () {
   $('.black-background').removeClass('down-slide');
+  $('#name').val('');     // 인풋 안의 값 비우기
+  $('#tel').val('');      // 인풋 안의 값 비우기
   $('#name-alert').hide();
   $('#tel-alert').hide();
 });
 
 
 
-
-// ✅ 모달창에서 키다운 이벤트 발생시
+// ✅ 모달창에서 키다운 이벤트 발생시 연락처 검증 (숫자 -> 하이픈)
 $(function () {
-  $(".phone-number-check").on('keydown', function (e) {
+  $(".phone-number-check").on('change', function (e) {
 
     var trans_num = $(this).val().replace(/-/gi, '');   // 숫자만 입력받기
     var k = e.keyCode;
@@ -222,9 +225,9 @@ $(function () {
     if (trans_num != null && trans_num != '') {               // 입력값이 있을때만 실행합니다.
 
       if (trans_num.length == 11 || trans_num.length == 10) { // 총 핸드폰 자리수는 11글자이거나, 10자여야 합니다.
-      
+
         var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;  // 유효성 체크
-        
+
         if (regExp_ctn.test(trans_num)) {
           // 유효성 체크에 성공하면 하이픈을 넣고 값을 바꿔줍니다.
           trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");
@@ -247,11 +250,19 @@ $(function () {
 
 
 
-// 구매완료 누른 후 폼이 전송될때
+// ✅ 구매완료 누른 후 폼이 전송될때
 $('form').on('submit', function (e) {
   // 입력한 이름 검증하기
   var 입력한이름 = $('#name').val();
   var 이름검증 = /^[가-힣]{2,4}$/;     // 한글 이름 2~4자 이내
+  // 입력한 연락처 검증하기
+  var 입력한연락처 = $('#tel').val();
+  var 연락처검증 = /^\d{2,3}-\d{3,4}-\d{4}$/;   // 일반 전화번호 정규식
+
+  // 연락처와 이름 모두 기재되었다면
+  if (이름검증.test(입력한이름) == true && 연락처검증.test(입력한연락처) == true) {
+    영수증출력();// ✅ 영수증 출력하는 함수 
+  }
 
   if (입력한이름 == '') {
     e.preventDefault();                               // 만약에 입력한 이름이 공백이면
@@ -262,7 +273,7 @@ $('form').on('submit', function (e) {
     $('#name-alert').html('이름이 올바르지 않습니다.');        // html 변경하고
     $('#name-alert').show();                                  //#name-alert 보여줘(show)
   } else {
-    e.preventDefault(); 
+    e.preventDefault();
     $('#name-alert').hide();
   }
 
@@ -271,12 +282,7 @@ $('form').on('submit', function (e) {
     $('#name-alert').html('이름은 4글자 이하로 적어주세요.');  // html 변경하고
     $('#name-alert').show();                                  //#name-alert 보여줘(show)
   }
-
-
-  // 입력한 연락처 검증하기
-  var 입력한연락처 = $('#tel').val();
-  var 연락처검증 = /^\d{2,3}-\d{3,4}-\d{4}$/;   // 일반 전화번호 정규식
-
+  
   if (입력한연락처 == '') {                           // 만약에 입력한연락처가 공백이면
     e.preventDefault();
     $('#tel-alert').html('연락처를 입력하지 않았습니다.');
@@ -290,24 +296,81 @@ $('form').on('submit', function (e) {
     $('#tel-alert').hide();
   }
 
-  if (입력한연락처.length > 13) {
-    e.preventDefault();
-    $('#tel-alert').html('연락처는 9 ~ 11 자리로 적어주세요.');
-    $('#tel-alert').show();
-  }
 });
 
 
-// ❗ 위의 검증을 거쳐 구매완료가 되면,,
-// 구매'완료' 누르면 영수증 이미지 띄워주기(canvas 태그 사용)
-// $('.buy-completion-Btn').click(function () {         // 구매완료 버튼 누르면 안에 함수 실행
 
+// ✅ 위의 검증을 거쳐 구매완료가 되면 실행할 함수 (클릭 이벤트 줄 필요 XXXX !! )
+function 영수증출력() {
 
+  // 먼저 모달창 사라지게 하기
+  $('.black-background').removeClass('down-slide');
+  $('#name-alert').hide();
+  $('#tel-alert').hide();
 
+  // 그리고 나서 영수증 이미지 출력
+  // canvas안에 적은 내용들은 전부 이미지처럼 사용가능
+  // 0. HTML어딘가에 <canvas id="canvas"></canvas> 이런 태그를 만들어줍니다. 
+  var 캔버스 = document.getElementById('canvas'); // canvas 태그를 자바스크립트 셀렉터로 찾음
+  var c = 캔버스.getContext('2d');    // getContext('2d') 이걸 붙이면 자유롭게 내용입력이 가능
+  var 캔버스길이 = $('#dropTemplate > div').length; // 상품개수에 따른 캔버스 길이
 
+  // 가로세로 높이 지정 
+  캔버스.width = 500;
+  캔버스.height = 300 * 캔버스길이; // (상품개수에따라 높이값 증가시켜야함)
 
-// });
+  // 맨위 영수증
+  c.font = 'bold 20px Malgun Gothic';   // .font하면 자유롭게 폰트설정 가능
+  c.fillText('영수증', 10, 40);
+  // 날짜
+  var 날짜 = new Date();
+  c.font = 'bold 16px Malgun Gothic';
+  c.fillText(날짜, 10, 60);
 
+  // 장바구니에 있는 상품 개수만큼 반복실행
+  $('#dropTemplate > div').each(function (i) {
+    // 제품이름
+    var 상품이름 = $(this).find('.productName').text();    // 각각의 것을 찾기위해 this find 사용
+    c.fillText(`품명 : ${상품이름}`, 10, 120 * (i + 1));   // .fillText(내용, x좌표, y좌표) 하면 canvas태그 내의 특정 좌표에 원하는 글씨 입력이 가능
+    // 브랜드이름
+    var 브랜드이름 = $(this).find('.brandName').text();
+    c.fillText(`브랜드명 : ${브랜드이름}`, 10, 120 * (i + 1) + 20);
+    // 가격
+    var 가격 = $(this).find('.drop-price').text();
+    c.fillText(가격, 10, 120 * (i + 1) + 40);
+    // 수량
+    var 수량 = $(this).find("input[type='number']").val();
+    c.fillText(`수량 : ${수량}`, 10, 120 * (i + 1) + 60);
+    // 합계
+    var 합계 = $(this).find('.sum').text();   // 합
+    c.fillText(`합계 : ${합계}`, 10, 120 * (i + 1) + 80);
+  });
+  // 총합계
+  var 총합계 = $('#totalSum').text();   //totalSum
+  c.fillText(`총합계 : ${총합계}`, 10, (120 * 캔버스길이) + 150);
 
-
+  // 닫기버튼 // 위에 그렸던 캔버스를 div박스 안에 넣음으로써 다이얼로그창으로 띄움
+  $('#canvas-popup').dialog({   // jQuery 다이얼로그 함수를 실행하는 함수
+    width: 500,                 // 다이얼로그 너비
+    height: 500,                // 다이얼로그 높이
+    modal: true,                // dialog를 modal 창으로 띄울것인지 결정
+    // resizeable : false       // 사이즈 조절가능 여부
+    buttons: {
+      '닫기': function () {         // '닫기' 가 버튼의 이름 (함수명)
+        $(this).dialog('close');    // 버튼 누르면 클로즈(다이얼로그 창을 닫는 기능)
+      }
+    },
+    //   , show: {                // 애니메이션 효과 - 보여줄때
+    //     effect: "blind",
+    //     duration: 1000
+    // }
+    // , hide: {                // 애니메이션 효과 - 감출때
+    //     effect: "explode",
+    //     duration: 1000
+    // }
+    // open: function (event, ui) {
+    //   $(event.target).dialog('widget')
+    // }
+  });
+};
 
