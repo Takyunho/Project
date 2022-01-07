@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>My Page</title>
+</head>
+
+<body>
+  <!-- 시계 -->
+  <h2 id="clock">00:00:00</h2>
+  <!-- 사용자 이름 입력 -->
+  <form class="hidden" id="login-form">
+    <input required maxlength="15" type="text" placeholder="what is your name?" />
+    <input type="submit" value="Log In"></input>
+  </form>
+  <h1 class="hidden" id="greeting"></h1>
+  <!-- to list -->
+  <form id="todo-form">
+    <input type="text" placeholder="해야할 일 작성" required />
+  </form>
+  <ul id="todo-list"></ul>
+  <!-- 명언 -->
+  <div id="quote">
+    <span></span>
+    <span></span>
+  </div>
+  <!-- 날씨 -->
+  <div id="weather">
+    <span></span>
+    <span></span>
+  </div>
+
+
+  
+  <script src="../JS/login.js"></script>
+  <script src="../JS/clock.js"></script>
+  <script src="../JS/quotes.js"></script>
+  <script src="../JS/background.js"></script>
+  <script src="../JS/todo.js"></script>
+  <script src="../JS/weather.js"></script>
+</body>
+
+</html>
