@@ -5,37 +5,49 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/end.css">
   <title>My Page</title>
 </head>
 
-<body>
-  <!-- 시계 -->
-  <h2 id="clock">00:00:00</h2>
-  <!-- 사용자 이름 입력 -->
-  <form class="hidden" id="login-form">
-    <input required maxlength="15" type="text" placeholder="what is your name?" />
-    <input type="submit" value="Log In"></input>
-  </form>
-  <h1 class="hidden" id="greeting"></h1>
-  <!-- to list -->
-  <form id="todo-form">
-    <input type="text" placeholder="해야할 일 작성" required />
-  </form>
-  <ul id="todo-list"></ul>
-  <!-- 명언 -->
-  <div id="quote">
-    <span></span>
-    <span></span>
-  </div>
-  <!-- 날씨 -->
-  <div id="weather">
-    <span></span>
-    <span></span>
-  </div>
+<body class="body">
+  <div class="main-flex">
+    <!-- 시계 -->
+    <h2 id="clock" class="main-clock">00:00:00</h2>
 
+    <div class="main-form main-login">
+      <!-- 사용자 이름 입력 -->
+      <form class="hidden" id="login-form">
+        <input required maxlength="15" type="text" placeholder="what is your name?" />
+        <input type="submit" value="Log In"></input>
+      </form>
+      <!-- 이름 입력 후 localStorge에 있는 이름 보여주기(처음 상태는 hidden) -->
+      <h1 class="hidden" id="greeting"></h1>
+    </div>
 
+    <div class="main-form main-todo">
+      <!-- to list -->
+      <form id="todo-form">
+        <input type="text" placeholder="해야할 일 작성" required />
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
+
+    <!-- 명언 -->
+    <div id="quote" class="main-form">
+      <span></span>
+      <span></span>
+    </div>
   
+    <!-- 날씨 -->
+    <div id="weather" class="main-weather">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+
+
+
   <script src="../JS/login.js"></script>
   <script src="../JS/clock.js"></script>
   <script src="../JS/quotes.js"></script>

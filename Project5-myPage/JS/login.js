@@ -11,24 +11,25 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {   //event로 작성하는 것이 관행
   event.preventDefault();    // 어떤 event의 기본 행동(새로고침)이 발생되지 않도록 막는 함수
-  loginForm.classList.add(HIDDEN_CLASSNAME);    //로그인 폼 숨겨
+  loginForm.classList.add(HIDDEN_CLASSNAME);    //로그인 폼 숨겨 (classList.add - 클래스 붙이기)
   const username = loginInput.value;            // 사용자로부터 입력받은 값을 변수로 저장
-  localStorage.setItem(USERNAME_KEY, username); // "username"이라는 키에 변수 username을 저장
+  localStorage.setItem(USERNAME_KEY, username); // "username"이라는 키에 변수 username을 lcoalStorage에 저장
   paintGreetings(username);
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `hello ${username}`;     // h1태그에 hello + 변수 값 넣어
+  greeting.innerText = `안녕! ${username}`;     // h1태그에 hello + 변수 값 넣어
   greeting.classList.remove(HIDDEN_CLASSNAME);  // h1 hidden 제거해서 화면에 보여줘
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
 // 맨 처음 실행 및 로컬저장소에 유저값 있는지 판단 하기 위한 변수
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
 
 if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-  paintGreetings(savedUsername);
+  paintGreetings(savedUsername);  // null이 아니면 localStorge에 저장되어있는 이름을 보여주기
 }
 
