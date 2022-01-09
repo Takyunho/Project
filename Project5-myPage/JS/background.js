@@ -16,9 +16,11 @@
 
 // ------------------------------------------------------------
 
+// 윈도우가 로드될때 함수실행
 window.onload = function(){
 
   // var background_src = "../IMG/";
+
   var body = document.querySelector(".body");
   // var background = document.querySelector(".background");
   var number = Math.floor(Math.random() * 7) + 1; // 8은 이미지의 개수

@@ -6,38 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/end.css">
+  <!-- 구글폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+  <!-- 구글폰트 끝 -->
+  <!-- fontawesome -->
+  <!-- <link rel="stylesheet" href="../fontawesome/css/all.css"> -->
+  <!-- fontawesome 끝-->
   <title>My Page</title>
 </head>
 
 <body class="body">
-  <div class="main-flex">
+  <div class="container">
     <!-- 시계 -->
     <h2 id="clock" class="main-clock">00:00:00</h2>
 
-    <div class="main-form main-login">
-      <!-- 사용자 이름 입력 -->
-      <form class="hidden" id="login-form">
-        <input required maxlength="15" type="text" placeholder="what is your name?" />
-        <input type="submit" value="Log In"></input>
-      </form>
-      <!-- 이름 입력 후 localStorge에 있는 이름 보여주기(처음 상태는 hidden) -->
-      <h1 class="hidden" id="greeting"></h1>
-    </div>
-
-    <div class="main-form main-todo">
-      <!-- to list -->
-      <form id="todo-form">
-        <input type="text" placeholder="해야할 일 작성" required />
-      </form>
-      <ul id="todo-list"></ul>
-    </div>
-
     <!-- 명언 -->
-    <div id="quote" class="main-form">
+    <div id="quote" class="main-quote">
       <span></span>
+      <br>
       <span></span>
     </div>
-  
+
+    <!-- <div class="main-form "> -->
+    <!-- 사용자 이름 입력 -->
+    <form class="hidden main-login" id="login-form">
+      <input required maxlength="15" type="text" placeholder="what is your name?" />
+      <input type="submit" value="Log In"></input>
+      <div style="float: none; clear: both;"></div>
+    </form>
+    <!-- 이름 입력 후 localStorge에 있는 이름 보여주기(처음 상태는 hidden) -->
+    <h1 class="hidden" id="greeting"></h1>
+    <!-- </div> -->
+
+    <!-- <div class="main-form "> -->
+    <!-- to list -->
+    <form id="todo-form" class="main-todo">
+      <input type="text" placeholder="해야할 일 작성 후 엔터" required />
+    </form>
+    <ul id="todo-list"></ul>
+    <!-- </div> -->
+
     <!-- 날씨 -->
     <div id="weather" class="main-weather">
       <span></span>
@@ -51,7 +61,7 @@
   <script src="../JS/login.js"></script>
   <script src="../JS/clock.js"></script>
   <script src="../JS/quotes.js"></script>
-  <script src="../JS/background.js"></script>
+  <!-- <script src="../JS/background.js"></script> -->
   <script src="../JS/todo.js"></script>
   <script src="../JS/weather.js"></script>
 </body>

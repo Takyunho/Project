@@ -36,6 +36,7 @@ function deleteToDo(event) {                    // 세번째로 만든 함수 (�
 // 3️
 function paintToDo(newToDo) {                   //두 번째로 만든 함수(toDo를 그리는 역할을 담당하는 함수)
   const li = document.createElement("li");      // li를 만들어서 HTML에 추가
+  li.innerHTML = "🔥";
   li.id = newToDo.id;
   const span = document.createElement("span");  // span을 만들어서 HTML에 추가
   span.innerText = newToDo.text;                     // handleToDoSubmit에서 전달된 newToDo값을 스팬에 텍스트로 입력(텍스트를 span 내부에 넣음)

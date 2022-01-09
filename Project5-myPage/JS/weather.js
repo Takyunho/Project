@@ -15,10 +15,10 @@ function onGeoOk(position) {
       const city = document.querySelector("#weather span:last-child");
       // const name = data.name;
       // const weather = data.weather[0].main; 를 아래처럼 이너텍스트
-      weather.innerText = `날씨 : ${data.weather[0].main}
-      온도 : ${data.main.temp}`;
+      weather.innerText = `🌈날씨 : ${data.weather[0].main}
+      🌡️온도 : ${data.main.temp}`;
       weather.appendChild(br);        // 줄바꿈을 위해
-      city.innerText = `도시 : ${data.name}`;
+      city.innerText = `🏙️도시 : ${data.name}`;
     });
 }
 // fetch를 통해 실제로 url을 클릭할 필요 없음. 자바스크립트가 대신 URL을 부름 
