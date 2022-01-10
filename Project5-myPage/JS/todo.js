@@ -27,6 +27,7 @@ function deleteToDo(event) {                    // 세번째로 만든 함수 (�
   // console.log(event.target.parentElement);
   // target은 클릭된 HTML element 즉, 버튼을 의미 / parentElement는 클릭된 element의 부모 즉, li를 의미
   const li = event.target.parentElement;        // 지워야 할 li
+  console.log(li);
   li.remove();  // li 지우기!!!
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // toDo의 id가 li의 id와 다른 걸 남김
   saveToDos();                  // toDos DB에서 todo를 지운 뒤에 saveToDos()를 한 번 더 불러야 함
@@ -101,7 +102,7 @@ if (savedToDos !== null) {                  // 따라서 만약 savedToDos가 lo
 
 /*
 
-SON.parse() = 단순한 문자열을 살아있는 자바스크립트 객체로 만들어줄 때 사용
+JSON.parse() = 단순한 문자열을 살아있는 자바스크립트 객체로 만들어줄 때 사용
 즉, 일반 배열을 가지고 단순한 문자열로 바꿀 수 있음 -> JSON.srtingify()
 그리고 단순한 문자열을 자바 스크립트가 이해할 수 있는 살아있는 배열로 만들 수 있음 -> JSON.parse()
 
