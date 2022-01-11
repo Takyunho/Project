@@ -164,3 +164,39 @@ input:-moz-placeholder { /* Firefox 18- */color:white; font-size: 20px;}
   font-size: 16px;
   color: white;
 }
+
+/* move Link */
+.moveLink-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+.move-link {
+  text-decoration: none;
+}
+.move-link:visited, .move-link:hover, .move-link:focus, .move-link:active {
+  text-decoration: none;
+}
+
+.link-container {
+  margin-top: 20px;
+}
+
+
+.pageLink {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+}
+.pageLink img {
+  width: 50px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
