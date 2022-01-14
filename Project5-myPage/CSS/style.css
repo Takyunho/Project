@@ -200,3 +200,8 @@ input:-moz-placeholder { /* Firefox 18- */color:white; font-size: 20px;}
   display: block;
   margin: auto;
 }
+
+/* 로그인 폼 숨기기 */
+.hidden {
+  display : none;
+}
