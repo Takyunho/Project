@@ -81,7 +81,7 @@ input:-moz-placeholder { /* Firefox 18- */color:white; font-size: 20px;}
 }
 .login-input2 {
   width: 10%;
-  padding-left: 0px;
+  padding: 0px;
 }
 
 
@@ -195,13 +195,34 @@ input:-moz-placeholder { /* Firefox 18- */color:white; font-size: 20px;}
   background-color: transparent;
 }
 .pageLink img {
-  width: 50px;
   text-align: center;
   display: block;
   margin: auto;
 }
 
-/* 로그인 폼 숨기기 */
-.hidden {
-  display : none;
+.pageLink img:hover {
+  opacity: 0.7;
+  transition: all 0.5s;
+  transition-timing-function: ease;
+}
+
+@media screen and (max-width : 768px) {
+  .main-clock {
+    font-size: 50px;
+  }
+  .moveLink-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 250px;
+    right: 70px;
+    
+  }
+  .pageLink {
+    margin: 100px;
+  }
+
 }
