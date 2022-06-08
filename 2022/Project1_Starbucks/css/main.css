@@ -9,7 +9,9 @@ body {
 img {
   display: block; /*@ 기본적으로 img는 인라인 요소이다. 그래서 아래의 여백이 생기는 것. 따라서 display: block으로 아래의 여백을 제거 */
 }
-
+a {
+  text-decoration: none;
+}
 /*~ HEADER */
 header { 
   background-color: royalblue;
@@ -32,4 +34,48 @@ header {
   height: 75px; /* logo의 높이값과 같도록 해야한다. */
   left: 0;  /* logo가 inner에 잘 붙어있다고 명시 */
 }  
+header .sub-menu {
 
+}
+header .sub-menu ul.menu {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header .sub-menu ul.menu li {
+  /* before의 부모 태그는 li */
+  position: relative;
+}
+header .sub-menu ul.menu li::before {
+  content: "";
+  /* before 가상요소는 인라인 요소이므로 block으로 해줘야 가로세로값을 가질 수 있음 */
+  /* display: block; */ /* position: absolute와 fixed는 요소의 display값이 block으로 바뀌므로, display값을 따로 명시하지 않아도 된다. */
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute; 
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before {
+  /* 첫번째 li태그의 가상요소(즉, sing in앞의 구분선)를 안보이도록 */
+  display: none; 
+}
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+header .sub-menu .search {
+  
+}
+header .sub-menu .search input {
+
+}
+header .sub-menu .search .material-icons {
+
+}
