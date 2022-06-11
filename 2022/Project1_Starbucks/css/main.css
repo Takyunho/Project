@@ -12,16 +12,20 @@ img {
 a {
   text-decoration: none;
 }
+.inner {    /* 공통으로 사용할거기 때문에 따로 뺀다. */
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
 /*~ HEADER */
 header { 
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8; 
 }
-.inner {
-  background-color: orange;
-  width: 1100px;
+header > .inner {   /* header의 자식요소인 inner만 높이값 지정 */
   height: 120px;
-  margin: 0 auto;
-  position: relative; 
 }
 .logo {
   position: absolute;
@@ -35,7 +39,10 @@ header {
   left: 0;  /* logo가 inner에 잘 붙어있다고 명시 */
 }  
 header .sub-menu {
-
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 0;
 }
 header .sub-menu ul.menu {
   display: flex;
@@ -71,11 +78,75 @@ header .sub-menu ul.menu li a:hover {
   color: #000;
 }
 header .sub-menu .search {
-  
+  height: 34px;
+  position: relative;
 }
 header .sub-menu .search input {
-
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s;
+}
+header .sub-menu .search input:focus {
+  width: 190px;
+  border: #669900;
 }
 header .sub-menu .search .material-icons {
+  position: absolute;
+  height: 24px;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: .4s;  /* opacity에 효과주기 */
+}
+header .sub-menu .search.focused .material-icons {  /* .search.focused = 일치선택자로 작성 */
+  opacity: 0; /* focused 클래스가 붙었을 때 아이콘 안보이도록 하기 */
+}
 
+header .main-menu {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+header .main-menu .item {
+  
+}
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+header .main-menu .item:hover .item__name { /* item__name에 hover를 붙이는 것이 아니라 .item(li태그)에 붙여야함 */
+  background: #2c2a29;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+  }
+header .main-menu .item .item__contents {
+  width: 100%;
+  position: fixed;  /* 뷰포트로 배치 */
+  left: 0;  /* fixed 사용시 top이나 bottom 속성을 사용하지 않아 수직 위치 값이 없다면, 요소의 원래 위치 그대로 사용한다. 따라서 left를 0으로만 줘도 됨 */
+  /* 만약 absolute를 사용했다면 부모 요소를 기준으로 하므로 화면의 뷰포트 좌우 끝까지 늘어날 수 없게 된다. */
+  display: none;
+}
+header .main-menu .item:hover .item__contents {
+  display: block;
+}
+
+header .main-menu .item .item__contents .contents__menu {
+  background-color: red;
+  height: 200px;
+}
+header .main-menu .item .item__contents .contents__texture {
+  background-color: orange;
+  height: 100px;
 }
