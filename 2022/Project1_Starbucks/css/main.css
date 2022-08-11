@@ -5,9 +5,10 @@ body {
   font-weight: 400; /* 일반적인 글씨두께 */
   line-height: 1.4; /* 16px의 1.4배 줄높이를 가진다. */
   font-family: 'Nanum Gothic', sans-serif;
+  height: 2000px;
 }
 img {
-  display: block; /* 기본적으로 img는 인라인 요소이다. 그래서 아래의 여백이 생기는 것. 따라서 display: block으로 아래의 여백을 제거 */
+  display: block; /* @ 기본적으로 img는 인라인 요소이다. 그래서 아래의 여백이 생기는 것. 따라서 display: block으로 아래의 여백을 제거 */
 }
 a {
   text-decoration: none;
@@ -22,7 +23,13 @@ a {
 /*~ HEADER */
 header { 
   background-color: #f6f5f0;
-  border-bottom: 1px solid #c8c8c8; 
+  border-bottom: 1px solid #c8c8c8;
+  /* @ position: relative;   badge의 부모요소이므로, 포지션 지정 */
+  /* @ 그러나 아래에서 fixed를 해줬으므로, 주석처리 */
+  position: fixed;
+  top: 0;
+  /* @ position fixed 와 position absolute는 가로 너비를 최소한으로 사용하려고 한다. 일반적으로 블록요소는 가로너비가 최대한으로 늘어나려고 하지만, 위에 두개는 아님!! */
+  width: 100%;
 }
 header > .inner {   /* header의 자식요소인 inner만 높이값 지정 */
   height: 120px;
@@ -108,7 +115,7 @@ header .sub-menu .search .material-icons {
   right: 5px;
   margin: auto;
   transition: .4s;  /* opacity에 효과주기 */
-}
+}   
 header .sub-menu .search.focused .material-icons {  /* .search.focused = 일치선택자로 작성 */
   opacity: 0; /* focused 클래스가 붙었을 때 아이콘 안보이도록 하기 */
 }
@@ -183,4 +190,18 @@ header .main-menu .item .item__contents .contents__texture {
 .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
+}
+
+.badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+
+.badge {
+  border-radius: 10px;
+  overflow: hidden; /* @ div태그에는 border-radius가 들어가지만, 이미지에는 border-radius가 적용되지 않기 때문에, overflow - hidden을 통해 넘치는 부분을 안보이게 해줘야 한다. */
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
 }
