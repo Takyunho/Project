@@ -18,6 +18,58 @@ a {
   margin: 0 auto;
   position: relative;
 }
+/* 전역버튼 스타일링 */
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;    /* 부모요소의 font-size로부터 독립된 사이즈를 갖기 위해 따로 지정 */
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box; 
+  display: block; /*@ a태그나 span태그에 버튼을 붙였을 때에도 정상작동되도록 하기 위해 display속성을 block으로 지정 */
+  transition: .4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse {     /* .btn.btn--reverse => 일치 선택자 */
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  color: #592B18;
+  border-color: #592B18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592B18;
+}
+.btn.btn--gold {
+  color: #D9AA8A;
+  border-color: #D9AA8A;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #D9AA8A;
+}
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
+
 
 
 /*~ HEADER */
@@ -30,6 +82,7 @@ header {
   top: 0;
   /* @ position fixed 와 position absolute는 가로 너비를 최소한으로 사용하려고 한다. 일반적으로 블록요소는 가로너비가 최대한으로 늘어나려고 하지만, 위에 두개는 아님!! */
   width: 100%;
+  z-index: 9;
 }
 header > .inner {   /* header의 자식요소인 inner만 높이값 지정 */
   height: 120px;
@@ -191,17 +244,68 @@ header .main-menu .item .item__contents .contents__texture {
   color: #669900;
   margin: 4px 0 14px;
 }
-
+/** 뱃지 */
 .badges {
   position: absolute;
   top: 132px;
   right: 12px;
 }
-
 .badge {
   border-radius: 10px;
   overflow: hidden; /* @ div태그에는 border-radius가 들어가지만, 이미지에는 border-radius가 적용되지 않기 때문에, overflow - hidden을 통해 넘치는 부분을 안보이게 해줘야 한다. */
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0,0,0,.15);
   cursor: pointer;
+}
+
+/*~ VISUAL */
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+}
+/* .visual .inner .title { } */
+/* 선택자를 작성하는 과정에서 생략할 수 있다. inner는 화면 중앙에 몰아주는 역할만 하기 때문에 사용할 필요가 없음 */
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+/* 배치되는 요소가 다른 요소와 묶여있는 묶음이면 그 묶음을 기준으로 안에서 배치될 수 있는 구조로 만들면 좋다.  */
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+/* .cup1.image => 일치 선택자(cup1이라는 클래스를 가지면서 image도 갖는 선택자) */
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0px;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+.visual .fade-in {
+  opacity: 0;
 }

@@ -1,5 +1,3 @@
-console.log('hello!')
-
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 
@@ -19,8 +17,9 @@ searchInputEl.addEventListener('blur', function () {
   searchInputEl.setAttribute('placeholder', '');   // 빈값을 할당해서 placeholder 지우기
 });
 
-const badgeEl = document.querySelector('.badges');
 
+// 일정 높이만큼 스크롤하면 뱃지 사라지게 하기
+const badgeEl = document.querySelector('.badges');
 // 화면이 스크롤 될 때마다 콜백함수가 실행된다.
 // window.addEventListener('scroll', function () {
 //   console.log("scroll!");
@@ -34,7 +33,7 @@ const badgeEl = document.querySelector('.badges');
 @ _.throttle(함수, 시간)
 */
 window.addEventListener('scroll', _.throttle(function () {
-  console.log(window.scrollY);  //# winow.scrollY => 화면 스크롤시 높이값을 출력해줌
+  // console.log(window.scrollY);  //# winow.scrollY => 화면 스크롤시 높이값을 출력해줌
   
   if (window.scrollY > 500) {
     // 뱃지 숨기기
@@ -59,5 +58,18 @@ window.addEventListener('scroll', _.throttle(function () {
       display: 'block'
     })
   }
-
 }, 300));
+
+
+// 홈페이지 로드시 이미지 하나씩 띄우기 (첫 section)
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+// gsap.to(요소, 지속시간(초 단위), 옵션(중괄호 안에 속성기입))
+fadeEls.forEach((fadeEl, index) => {
+  gsap.to(fadeEl, 1, {
+    opacity: 1,
+    // 순차적으로 화면에 하나씩 보여주기 위해 delay옵션 적용
+    // 그러나 delay를 .7로 적용하면 fade-in이 한번에 0.7초 뒤에 실행됨
+    // 따라서 반복실행 될 때마다 delay의 시간을 차례대로 줘야하므로, 아래처럼 구현
+    delay: (index + 1) * .7  // 처음 fadeEl은 0.7s 그 다음은 1.4s .. 2.8s    
+  }) 
+})
