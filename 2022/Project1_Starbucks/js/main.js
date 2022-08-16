@@ -18,7 +18,8 @@ searchInputEl.addEventListener('blur', function () {
 });
 
 
-// 일정 높이만큼 스크롤하면 뱃지 사라지게 하기
+
+//! 일정 높이만큼 스크롤하면 뱃지 사라지게 하기
 const badgeEl = document.querySelector('.badges');
 // 화면이 스크롤 될 때마다 콜백함수가 실행된다.
 // window.addEventListener('scroll', function () {
@@ -61,7 +62,8 @@ window.addEventListener('scroll', _.throttle(function () {
 }, 300));
 
 
-// 홈페이지 로드시 이미지 하나씩 띄우기 (첫 section)
+
+//! 홈페이지 로드시 이미지 하나씩 띄우기 (첫 section)
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 // gsap.to(요소, 지속시간(초 단위), 옵션(중괄호 안에 속성기입))
 fadeEls.forEach((fadeEl, index) => {
@@ -72,4 +74,50 @@ fadeEls.forEach((fadeEl, index) => {
     // 따라서 반복실행 될 때마다 delay의 시간을 차례대로 줘야하므로, 아래처럼 구현
     delay: (index + 1) * .7  // 처음 fadeEl은 0.7s 그 다음은 1.4s .. 2.8s    
   }) 
+})
+
+
+
+//! swiperjs 라이브러리를 이용해서 공지사항 슬라이드 하기
+//@ 사용법 : new Swiper(선택자, 옵션) 
+new Swiper('.inner__left .swiper', {
+  direction: 'vertical',
+  autoplay: true,   // 슬라이드 자동재생
+  loop: true        // 반복재생 여부(슬라이드를 계속 반복)
+});
+new Swiper('.promotion .swiper', {
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수 (default는 1)
+  spaceBetween: 10, // 슬라이드 사이의 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  loop: true,
+  autoplay: {
+    // {}안에 추가적인 옵션 부여가능
+    delay: 5000  // ms단위로 기재(기본값 3000) => 5s마다 자동으로 슬라이드가 됨    
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination',  // 페이지 번호 요소의 선택자를 넣음
+    clickable: true,   // ...을 클릭 가능하도록 (사용자의 페이지 번호 요소 제어)
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',   //이전버튼
+    nextEl: '.promotion .swiper-next'    //다음버튼
+  }
+});
+
+
+
+//! 스타벅스 프로모션옆의 버튼 클릭시 캐러셀을 수직으로 토글되도록 하기
+const promotionToggleBtn = document.querySelector('.toggle-promotion')
+const promotionEl = document.querySelector('.promotion');
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener('click', function () {
+  isHidePromotion = !isHidePromotion    //@ 어떤 특정 변수의 값을 지속적으로 반대값으로 변환시킬 때 ! 사용 
+  if (isHidePromotion) {
+    // true이면 숨김 처리!
+    promotionEl.classList.add('hide');    // hide라는 클래스 추가
+  } else {
+    // false이면 보임 처리!
+    promotionEl.classList.remove('hide');   // hide라는 클래스 제거
+  }
 })
