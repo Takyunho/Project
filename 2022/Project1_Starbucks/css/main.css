@@ -409,7 +409,7 @@ header .main-menu .item .item__contents .contents__texture {
   overflow: hidden;
 }
 .notice .promotion.hide { /* .promotion.hide => 일치선택자 */
-  height: 0;
+  height: 0;    /*@ 자바스크립트에서 classList를 통해 hide라는 클래스를 추가했고, 이때 display: none이 아니라 height를 0으로 설정 하는 것에 주의 */
 }
 .notice .promotion .swiper {
   /*@ css에서 calc함수는 굉장히 유용하게 쓰인다. 단위는 꼭 px이 아니여도 된다. */
