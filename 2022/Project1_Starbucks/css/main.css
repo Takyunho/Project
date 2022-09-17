@@ -312,9 +312,9 @@ header .main-menu .item .item__contents .contents__texture {
 
 
 /*~ NOTICE */
-.notice {
+/* .notice {
 
-}
+} */
 /* NOTICE LINE */
 .notice-line {
   position: relative;
@@ -491,4 +491,50 @@ header .main-menu .item .item__contents .contents__texture {
 .notice .promotion .swiper-next:hover {
   background: #333;
   color: #fff;
+}
+
+
+/** REWARDS */
+.rewards {
+  position: relative;
+}
+.rewards .bg-left {
+  width: 50%;
+  height: 100%;
+  background: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rewards .bg-right {
+  width: 50%;
+  height: 100%;
+  background: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rewards .inner {
+  background-image: url("../images/rewards.jpg");
+  height: 241px;
+  /* position: relative가 위에서 선언한 .inner에 들어 있으므로, 따로 적어주지 않아도 된다. */
+}
+
+.rewards .btn-group {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;   /* 부모 요소인 .rewards .inner에 position: relative가 없다고 생각하면 안됨. relative는 위에서 선언한 .inner에 들어있기 때문 */
+  bottom: 24px;
+  right: 0;
+}
+.rewards .btn-group .btn.sign-up {
+  margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in {
+  width: 110px;
+}
+.rewards .btn-group .btn.gift {
+  margin-top: 10px;
+  flex-grow: 1;
 }
