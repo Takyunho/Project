@@ -82,7 +82,7 @@ header {
   top: 0;
   /* @ position fixed 와 position absolute는 가로 너비를 최소한으로 사용하려고 한다. 일반적으로 블록요소는 가로너비가 최대한으로 늘어나려고 하지만, 위에 두개는 아님!! */
   width: 100%;
-  z-index: 9;
+  z-index: 11;    /* swiper의 z-index가 10이여서 그것보다 높게 설정 */
 }
 header > .inner {   /* header의 자식요소인 inner만 높이값 지정 */
   height: 120px;
