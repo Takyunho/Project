@@ -121,3 +121,29 @@ promotionToggleBtn.addEventListener('click', function () {
     promotionEl.classList.remove('hide');   // hide라는 클래스 제거
   }
 })
+
+
+//! 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+  // `.toFixed()`를 통해 반환된 문자 데이터를,
+  // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+}
+
+//! 반복 애니메이션 구현하기
+function floatingObject(selector, delay, size) {
+  // gsap.to(요소, 시간, 옵션);
+  gsap.to(selector /* 선택자 */,
+    random(1.5 /* 최소값 */, 2.5 /* 최대값 */) /* 애니메이션 동작시간 */,
+    { // 옵션
+      y: size,     // y축으로 얼마나 이동할지
+      repeat: -1,  //@ 무한반복
+      yoyo: true,  //@ 한번 재생된 애니메이션을 다시 뒤로 재생해서 왔다갔다할 수 있게 함
+      ease: Power1.easeInOut,
+      delay: random(0, delay)
+    }
+  );
+}
+floatingObject('.floating1', 1, 15)
+floatingObject('.floating2', .5, 15)
+floatingObject('.floating3', 1.5, 20)

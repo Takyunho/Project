@@ -5,7 +5,7 @@ body {
   font-weight: 400; /* 일반적인 글씨두께 */
   line-height: 1.4; /* 16px의 1.4배 줄높이를 가진다. */
   font-family: 'Nanum Gothic', sans-serif;
-  height: 2000px;
+  height: 6000px;
 }
 img {
   display: block; /* @ 기본적으로 img는 인라인 요소이다. 그래서 아래의 여백이 생기는 것. 따라서 display: block으로 아래의 여백을 제거 */
@@ -583,4 +583,103 @@ header .main-menu .item .item__contents .contents__texture {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.youtube .inner {
+  height: 700px;
+  /* background-color: seagreen; */ 
+}
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+/* .youtube .floating3 {
+  position: absolute;
+  bottom: -200px;
+  right: 0;
+} */
+
+
+/*~ SEASON PRODUCT */
+.season-product {
+background-image: url("../images/season_product_bg.jpg");
+}
+.season-product .inner {
+  height: 400px;
+}
+.season-product .floating3 {
+  position: absolute;
+  top: -200px;
+  right: 0;
+}
+.season-product .text-group {
+  position: absolute;
+  top: 110px;
+  right: 100px;
+}
+.season-product .text-group .title {
+  margin-bottom: 10px;
+}
+.season-product .text-group .description {
+  margin-bottom: 15px;
+}
+.season-product .text-group .more {
+  
+}
+
+
+/*~ RESERVE COFFEE */
+.reserve-coffee {
+  background-image: url("../images/reserve_bg.jpg");
+}
+.reserve-coffee .inner {
+  height: 400px;
+}
+.reserve-coffee .reserve-logo {
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+.reserve-coffee .inner .text-group {
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+.reserve-coffee .product {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+/*~ PICK YOUR FAVORITE */
+.pick-your-favorite {
+  background-image: url("../images/favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.pick-your-favorite .inner {
+  padding: 110px 0;
+}
+.pick-your-favorite .text-group {
+  /* background: orange; */
+  margin-left: 100px;
+  display: flex;
+  width: 362px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.pick-your-favorite .text-group .title {
+  margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description {
+  margin-bottom: 40px;
 }
