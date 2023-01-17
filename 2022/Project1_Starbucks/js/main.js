@@ -147,3 +147,15 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15)
 floatingObject('.floating2', .5, 15)
 floatingObject('.floating3', 1.5, 20)
+
+const spyEls = document.querySelectorAll('section.scroll-spy'); // section중에 scroll-spy라는 클래스를 가지고 있는 섹션
+spyEls.forEach((spyEl, index) => {
+  // ScrollMagic : 화면을 위아래로 스크롤 할 때 화면에 보이는지 보이지 않는지를 감시할 때 필요한 라이브러리
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl,  // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8 // 내가 감시하고 있는 요소가 뷰포트의 0.8정도 위치에 왔을때를 알기 위해 지정
+    })
+    .setClassToggle()
+    .addTo();
+})
