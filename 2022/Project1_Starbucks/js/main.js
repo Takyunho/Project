@@ -103,7 +103,18 @@ new Swiper('.promotion .swiper', {
     nextEl: '.promotion .swiper-next'    //다음버튼
   }
 });
-
+//! 다중 요소 슬라이드 하기
+new Swiper('.awards .swiper', {
+  // direction: 'horizontal', // 이미 기본값임
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',   //이전버튼
+    nextEl: '.awards .swiper-next'    //다음버튼
+  }
+})
 
 
 //! 스타벅스 프로모션옆의 버튼 클릭시 캐러셀을 수직으로 토글되도록 하기
