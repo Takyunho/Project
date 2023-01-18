@@ -5,7 +5,7 @@ body {
   font-weight: 400; /* 일반적인 글씨두께 */
   line-height: 1.4; /* 16px의 1.4배 줄높이를 가진다. */
   font-family: 'Nanum Gothic', sans-serif;
-  height: 6000px;
+  /* height: 6000px; */
 }
 img {
   display: block; /* @ 기본적으로 img는 인라인 요소이다. 그래서 아래의 여백이 생기는 것. 따라서 display: block으로 아래의 여백을 제거 */
@@ -852,4 +852,86 @@ background-image: url("../images/season_product_bg.jpg");
 .awards .swiper-next:hover {
   background-color: #fff;
   color: #333;
+}
+
+
+/* ~ FOOTER */
+footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+footer .inner {
+  padding: 40px 0 60px 0;
+}
+footer .menu {
+  display: flex;
+  justify-content: center; /* 수직 기준으로 가운데 정렬 */
+}
+footer .menu li {
+  position: relative;
+}
+/*@ li요소 사이사이에 가상선택자 ::before를 이용해 .을 만들 수 있다. */
+footer .menu li::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  margin: auto;
+  /* display: block;  */
+  /*@ before라는 가상선택자는 인라인 요소이므로 block으로 해줘야 너비 높이를 가질 수 있다.
+  하지만 position: absolute나 fixed를 사용하면 display값이 자동으로 block으로 바뀌므로, display: block을 설정할 필요가 없다. */
+}
+footer .menu li:last-child::before {
+  /* before가상요소 선택자 마지막 부분(회색점) 안보이게 하기 */
+  display: none;
+}
+footer .menu li a {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 15px;
+  display: block; /*@ inline 요소는 padding top과 bottom이 적용이 안되므로, display: block 으로 지정해줘야 한다. */
+}
+footer .menu li a.green {
+  color: #669900;
+}
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+/*^ last-child를 이용하지 않고 :not 선택자를 이용해서 마지막 요소의 스타일 적용안시키기 */
+footer .btn-group .btn:not(:last-child) {
+  font-size: 12px;
+  margin-right: 10px;
+}
+/* footer .btn-group .btn:last-child {
+  margin-right: 0;
+} */
+footer .info {
+  margin-top: 30px;
+  text-align: center;
+}
+footer .info span {
+  margin-right: 20px;
+  color: #999;
+  font-size: 12px;
+}
+footer .info span:last-child {
+  margin-right: 0;
+}
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+footer .text-logo {
+  margin: 30px auto 0;
+  /*@ img요소가 display: block + margin: 0 auto; 인 경우, width 속성이 없어도 가운데 정렬이 가능하다. (img태그는 원래 inline요소) */
+  /*@ 추가로, 현재 프로젝트에서 img 요소에 display: block;을 지정한 상태이다. */
 }
