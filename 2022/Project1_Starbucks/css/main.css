@@ -903,10 +903,10 @@ footer .btn-group {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  font-size: 12px;
 }
 /*^ last-child를 이용하지 않고 :not 선택자를 이용해서 마지막 요소의 스타일 적용안시키기 */
 footer .btn-group .btn:not(:last-child) {
-  font-size: 12px;
   margin-right: 10px;
 }
 /* footer .btn-group .btn:last-child {
