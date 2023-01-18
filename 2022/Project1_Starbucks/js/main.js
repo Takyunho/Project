@@ -171,3 +171,9 @@ spyEls.forEach((spyEl, index) => {
     .addTo(new ScrollMagic.Controller());
 })
 // 즉, ScrollMagic 라이브러리를 통해 뷰포트에서 일정 위치 만큼 스크롤시 spyEl 요소에 show 클래스를 붙일 수 있다.
+
+
+
+//! footer부분의 span태그에 날짜 올해로 지정하기
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear();  // 2023
