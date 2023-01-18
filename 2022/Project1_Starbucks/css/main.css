@@ -70,6 +70,37 @@ a {
   background-color: #fff;
 }
 
+/*^ opacity를 0으로해서 처음엔 안보이게 하다가 show클래스가 section에 붙었을때 back-to-position 클래스의 opacity값을 1로 바꿔서 보이게 함 */
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+}
+.back-to-position.to-right {
+  /* 원래 위치에서 -150px 이동한 위치 */
+  transform: translateX(-150px);
+}
+.back-to-position.to-left {
+  /* 원래 위치에서 150px이동한 위치 */
+  transform: translateX(150px);
+}
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+/*^ 트랜지션 딜레이를 통해 각각의 요소를 화면에 나타낼 때 순서대로 나타나게 할 수 있다. */
+.show .back-to-position.delay-0 {
+  transition-delay: 0s;
+}
+.show .back-to-position.delay-1 {
+  transition-delay: .3s;
+}
+.show .back-to-position.delay-2 {
+  transition-delay: .6s;
+}
+.show .back-to-position.delay-3 {
+  transition-delay: 0.9s;
+}
+
 
 
 /*~ HEADER */

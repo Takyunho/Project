@@ -156,6 +156,7 @@ spyEls.forEach((spyEl, index) => {
       triggerElement: spyEl,  // 보여짐 여부를 감시할 요소를 지정
       triggerHook: .8 // 내가 감시하고 있는 요소가 뷰포트의 0.8정도 위치에 왔을때를 알기 위해 지정
     })
-    .setClassToggle()
-    .addTo();
+    .setClassToggle(spyEl, 'show') // 토글할 요소, 토글할 클래스 이름
+    .addTo(new ScrollMagic.Controller());
 })
+// 즉, ScrollMagic 라이브러리를 통해 뷰포트에서 일정 위치 만큼 스크롤시 spyEl 요소에 show 클래스를 붙일 수 있다.
