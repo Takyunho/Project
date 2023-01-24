@@ -21,6 +21,7 @@ searchInputEl.addEventListener('blur', function () {
 
 //! 일정 높이만큼 스크롤하면 뱃지 사라지게 하기
 const badgeEl = document.querySelector('.badges');
+
 // 화면이 스크롤 될 때마다 콜백함수가 실행된다.
 // window.addEventListener('scroll', function () {
 //   console.log("scroll!");
@@ -48,9 +49,13 @@ window.addEventListener('scroll', _.throttle(function () {
     */
     gsap.to(badgeEl, .6, {
       opacity: 0,
-      display: 'none'
+      display: 'none'   // opacity는 시각적으로만 없애는 것이므로, display를 none으로 입력해야 뱃지가 완전히 사라진다.
     });
-    // opacity는 시각적으로만 없애는 것이므로, display를 none으로 입력해야 뱃지가 완전히 사라진다.
+    
+    // 스크롤 위로 올려주는 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    })
   } else {
     // 뱃지 보이기
     // badgeEl.style.display = "block";
@@ -58,10 +63,22 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 1,
       display: 'block'
     })
+
+    // 스크롤 위로 올려주는 버튼 숨기기
+    // gsap 라이브러리는 요소를 지정해줘도 되지만, 아이디나 클래스 선택자만 적어줘도 동작한다.
+    gsap.to('#to-top', .2, {
+      x: 100
+    })
   }
 }, 300));
 
+const toTopEl = document.querySelector('#to-top');  // 호이스팅 때문에 위로 올라가게 된다.
 
+toTopEl.addEventListener('click', () => { 
+  gsap.to(window, .7, {
+    scrollTo: 0   // .7초동안 스크롤의 위치를 0px위치로 옮김
+  })
+})
 
 //! 홈페이지 로드시 이미지 하나씩 띄우기 (첫 section)
 const fadeEls = document.querySelectorAll('.visual .fade-in');
