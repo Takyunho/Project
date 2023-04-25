@@ -1,0 +1,100 @@
+/*~ 로그인 섹션 전체 */
+.signin {
+    margin-top: 120px;
+    padding: 100px 0 150px;
+    background-image: url("../images/signin_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* 로그인 글씨 부분 */
+.signin h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 로그인 창 */
+.signin__card {
+    width: 500px;
+    margin: 0 auto;
+    /* padding: 40px 30px; */
+    background-color: #f6f5f0;
+    border-radius: 6px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    color: #555;
+}
+
+/* 로그인 창 안의 텍스트 부분 */
+.signin__card h2 {
+    padding: 30px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 1px solid #ddd;
+}
+
+/* welcome */
+.signin__card h2 strong {
+font-weight: 700;
+color: #006633;
+}
+
+/* 로그인 창 안의 form */
+.signin__card form {
+    padding: 30px 22px;
+    border-top: 1px solid #ddd;
+}
+
+.signin__card form input {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.signin__card form [type="submit"] {
+    background-color: #006633;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.signin__card form p {
+    font-size: 12px;
+    color: #006633;
+    text-align: center;
+}
+
+.signin__card .actions {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.signin__card .actions a {
+    /*^ 요소의 증가 너비가 1 비율이고, */
+    flex-grow: 1;   
+    /*^ 기본 너비는 0으로 지정해서 딱 맞게 버튼을 구성 */
+    flex-basis: 0;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    font-size: 14px;
+    border-right: 1px solid #ddd;
+}   
+
+.signin__card .actions a:last-child {
+    border-right: none;
+}
+
+.signin__card .actions a:hover {
+    text-decoration: underline; /* hover시 밑줄이 쳐지도록 */
+}
