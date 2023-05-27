@@ -1,6 +1,7 @@
 <template>
   <div>
     Home
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
 </template>
 
@@ -10,6 +11,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 </style>
