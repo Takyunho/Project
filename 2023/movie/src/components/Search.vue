@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <input class="form-control" type="text" v-model="title" placeholder="찾고자 하는 영화를 입력해주세요!">
+    <input class="form-control" type="text" v-model="title" placeholder="찾고자 하는 영화를 입력해주세요!" @keyup.enter="apply">
     <div class="selects">
       <select v-for="filter in filters" :key="filter.name" class="form-select" v-model="$data[filter.name]">
         <!-- filter.name이 year인 경우 즉, 세번째 option에만 적용되도록 함 -->
@@ -10,10 +10,14 @@
         <option v-for="item in filter.items" :key="item">{{ item }}</option>
       </select>
     </div>
+    <button class="btn btn-primary" @click="apply">Apply</button>
   </div>
 </template>
 
 <script>
+// axios
+import axios from 'axios'
+
   export default {
     data() {
       return {
@@ -44,8 +48,18 @@
           }
         ],
       }
-    },
+  },
+  methods: {
+    async apply() {
+      const OMDB_API_KEY = 'a8603ac4'
+      const OMDB_API = `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`
+
+      const res = await axios.get(OMDB_API)
+      console.log(res)
+      
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -67,6 +81,12 @@
         margin-right: 0;
       }
     }
+  }
+  .btn {
+    width: 120px;
+    height: 50px;
+    font-weight: 700;
+    flex-shrink: 0; // flex item의 크기를 줄이지 않음
   }
 }
 </style>
