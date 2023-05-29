@@ -1,15 +1,16 @@
 <template>
   <HeadLine></HeadLine>
-  
-  <button type="button" class="btn btn-primary">Primary</button>
+  <Search></Search>
 </template>
 
 <script>
-import HeadLine from '../components/HeadLine.vue'
+import HeadLine from '../components/HeadLine.vue';
+import Search from '../components/Search.vue';
 
 export default {
   components: {
-    HeadLine
+    HeadLine,
+    Search,
   }
 
 }
