@@ -21,4 +21,9 @@
 //=> 2. main.scss에서 @import "../../node_modules/bootstrap/scss/bootstrap" 추가
 //=> 3. App.vue에서 @import "./styles/main.scss"; 추가
 
+body {
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+}
+
 </style>

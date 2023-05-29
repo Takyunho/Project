@@ -1,16 +1,19 @@
 <template>
-  <div>
-    Home
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
+  <HeadLine></HeadLine>
+  <Search></Search>
 </template>
 
 <script>
-  export default {
-    
+import HeadLine from '../components/HeadLine.vue';
+import Search from '../components/Search.vue';
+
+export default {
+  components: {
+    HeadLine,
+    Search,
   }
+
+}
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
