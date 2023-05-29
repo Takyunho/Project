@@ -1,16 +1,18 @@
 <template>
-  <div>
-    Home
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
+  <HeadLine></HeadLine>
+  
+  <button type="button" class="btn btn-primary">Primary</button>
 </template>
 
 <script>
-  export default {
-    
+import HeadLine from '../components/HeadLine.vue'
+
+export default {
+  components: {
+    HeadLine
   }
+
+}
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
