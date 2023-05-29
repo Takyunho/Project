@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <RouterView></RouterView>
-  </div>
+  <Header></Header>
+  <RouterView></RouterView>
 </template>
 
 <script>
+  import Header from './components/Header'
+
   export default {
-    
+  components: {
+      Header
+    }
   }
 </script>
 
