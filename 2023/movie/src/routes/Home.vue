@@ -12,7 +12,7 @@ import MovieList from '@/components/MovieList.vue';
 export default {
   components: {
     HeadLine,
-    Search,
+    Search, 
     MovieList
   }
 

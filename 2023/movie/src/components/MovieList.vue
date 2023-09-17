@@ -8,6 +8,7 @@
 
 <script>
 import MovieItem from './MovieItem.vue';
+
 export default {
   components: {
     MovieItem
@@ -15,9 +16,9 @@ export default {
   data() {
     return {
       movies: [],
-    }
+    }; 
   },
-}
+};
 </script>
 
 <style lang="scss" scoped></style>
