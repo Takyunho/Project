@@ -7,10 +7,11 @@
 </template>
 
 <script>
-import MovieItem from "./MovieItem.vue";
+import MovieItem from './MovieItem.vue';
+
 export default {
   components: {
-    MovieItem,
+    MovieItem
   },
   data() {
     return {
