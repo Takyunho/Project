@@ -52,7 +52,7 @@ import axios from 'axios'
   methods: {
     async apply() {
       const OMDB_API_KEY = 'a8603ac4'
-      const OMDB_API = `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`
+      const OMDB_API = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`
 
       const res = await axios.get(OMDB_API)
       console.log(res)
