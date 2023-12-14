@@ -15,9 +15,6 @@
 </template>
 
 <script>
-// axios
-import axios from 'axios'
-
   export default {
     data() {
       return {
@@ -51,12 +48,14 @@ import axios from 'axios'
   },
   methods: {
     async apply() {
-      const OMDB_API_KEY = 'a8603ac4'
-      const OMDB_API = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`
-
-      const res = await axios.get(OMDB_API)
-      console.log(res)
-      
+      this.$store.dispatch('movie/searchMovies', {
+        title: this.title,
+        type: this.type,
+        number: this.number,
+        year: this.year, 
+      })
+      // store의 mutations를 실행할 때는 commit 메소드를 사용하고,
+      // actions를 실행할 때는 dispatch 메소드를 사용한다.
     }
   }
 }
