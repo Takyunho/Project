@@ -34,13 +34,15 @@ export default function TodoBox() {
     
   };
 
+  // 새로운 todo 추가
+  const handleAdd = (todo) => setTodoList([...todoList, todo])
 
   return (
     <div>
       <div className={styles.todoBox}>
         <TodoHeader />
         <TodoBody todoList={todoList} handleDelete={handleDelete} />
-        <TodoFooter todoList={todoList} setTodoList={setTodoList} />
+        <TodoFooter todoList={todoList} onAdd={handleAdd} />
       </div>
     </div>
   );
