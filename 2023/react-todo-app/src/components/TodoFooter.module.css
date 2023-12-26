@@ -31,4 +31,5 @@
   box-sizing: border-box;
   outline: none;
   margin: 10px;
+  cursor: pointer;
 }

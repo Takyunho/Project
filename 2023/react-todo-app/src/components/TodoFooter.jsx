@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import styles from "./TodoFooter.module.css";
+//uuid
+import { v4 as uuidv4 } from "uuid";
 
-export default function TodoFooter({ todoList, onAdd }) {
+export default function TodoFooter({ onAdd }) {
   // 새로운 할 일(input 값)
   const [newTodo, setNewTodo] = useState("");
 
   // input에 입력된 값 다루는 함수
-  const handleChange = (e) => {
-    // console.log(e.target.value);
-    setNewTodo(e.target.value);
-  };
+  const handleChange = (e) => setNewTodo(e.target.value)
 
   // todoList에 새로운 할 일 추가
   const addTodo = () => {
@@ -19,12 +18,13 @@ export default function TodoFooter({ todoList, onAdd }) {
     }
 
     const todo = {
-      id: todoList.length + 1,
+      // uuid 라이브러리 사용하기
+      id: uuidv4(),
       content: newTodo,
-      status: "disabled",
+      status: "active",
     };
 
-    onAdd(todo);
+    onAdd(todo);  //* TodoBox.jsx의 handleAdd 함수 호출(인자로 todo 전달)
     setNewTodo(""); // input 초기화
   };
 
