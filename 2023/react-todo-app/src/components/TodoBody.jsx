@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./TodoBody.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-export default function TodoBody({ todoList, onDelete, onUpdate }) {
+export default function TodoBody({ todoList, onDelete, onUpdate, filter }) {
 
   const handleChange = (event, item) => {
     const status = event.target.checked ? "completed" : "active";
@@ -16,11 +16,13 @@ export default function TodoBody({ todoList, onDelete, onUpdate }) {
     onUpdate(updateTodo);
   }
 
+  const filtered = getFilteredItems(todoList, filter) // 선택한 필터에 대한 값만 들어가니까 아래에서 filtered를 map 메소드를 통해 보여주면 해당하는 filter만 보여줌
+
   return (
     <div>
       {/* 체크박스 + list + 삭제버튼 */}
       <ul className={styles.ul}>
-        {todoList.map((item) => {
+        {filtered.map((item) => {
           return (
             <li key={item.id} className={styles.li}>
               <div className={styles.li_Box1}>
@@ -49,4 +51,11 @@ export default function TodoBody({ todoList, onDelete, onUpdate }) {
       </ul>
     </div>
   );
+}
+
+function getFilteredItems(todoList, filter) {
+  if (filter === 'all') {
+    return todoList;
+  }
+  return todoList.filter(todo => todo.status === filter);  // 각각의 todo를 받아와서 todo의 status가 filter에 해당하는거만 필터링하기
 }
