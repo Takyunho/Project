@@ -5,7 +5,8 @@
 }
 
 .background {
-  background-image: url("../public/images/formerly-gradienta.jpg");
+  /* background-image: url("../public/images/formerly-gradienta.jpg"); */
+  background-image: url("../public/images/gradient.avif");
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 100vw;
