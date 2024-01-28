@@ -12,9 +12,9 @@ export default function TodoHeader({ filters, filter, onFilterChange}) {
         </span>
       </button>
       {/* 전체보기 / 할 일 / 완료 */}
-      <ul>
+      <ul className={styles.list_wrap}>
         {filters.map((value, index) => <li key={index}>
-          <button onClick={() => onFilterChange(value)}>{value}</button>
+          <button className={styles.filter_btn} onClick={() => onFilterChange(value)}>{value}</button>
         </li>)}
       </ul>
     </header>
