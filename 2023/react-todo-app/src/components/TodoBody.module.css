@@ -1,10 +1,17 @@
+.container {
+  height: 100%;
+  min-height: 0;
+  /* overflow-y: auto; */
+}
+
 .ul {
   width: 100%;
   height: 60%;
   min-height: 460px;
+  max-height: 460px;
+  overflow-y: scroll;
   /* background-color: lightcyan; */
   border-top: 1px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 .li {
   list-style: none;
@@ -22,8 +29,17 @@
   /* background-color: orange; */
 }
 
-/* 체크박스 */
+.li_Box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* 체크박스 */
+.li_checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+}
 
 
 
@@ -38,6 +54,7 @@
 /* 라벨 */
 .li_content {
   margin: 0 0 0 8px;
+  
 }
 
 /* 삭제버튼 */
