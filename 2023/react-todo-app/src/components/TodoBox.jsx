@@ -50,6 +50,7 @@ export default function TodoBox() {
       <div className={styles.todoBox}>
         {/* header에 사용하고 있는 모든 필터의 정보, 선택된 필터의 정보, 필터 변경을 위한 함수를 전달 */}
         <TodoHeader filters={filters} filter={filter} onFilterChange={setFilter} />
+        {/*idea: 강의에서는 todoBody 부분에서 ul태그를 반복문으로 돌리고, li 태그만 todo라는 컴포넌트로 따로 빼서 작성함 */}
         <TodoBody
           todoList={todoList}
           onDelete={handleDelete}

@@ -16,10 +16,11 @@ export default function TodoBody({ todoList, onDelete, onUpdate, filter }) {
     onUpdate(updateTodo);
   }
 
+  //==> 중요 !!!
   const filtered = getFilteredItems(todoList, filter) // 선택한 필터에 대한 값만 들어가니까 아래에서 filtered를 map 메소드를 통해 보여주면 해당하는 filter만 보여줌
 
   return (
-    <div>
+    <div className={styles.container}>
       {/* 체크박스 + list + 삭제버튼 */}
       <ul className={styles.ul}>
         {filtered.map((item) => {
@@ -29,11 +30,11 @@ export default function TodoBody({ todoList, onDelete, onUpdate, filter }) {
                 <input
                   className={styles.li_checkbox}
                   type="checkbox"
-                  id="todo"
+                  id={`todo${item.id}`}
                   checked={item.status === "completed"}
                   onChange={(event) => handleChange(event, item)}
                 />
-                <label htmlFor="todo" className={styles.li_content}>
+                <label htmlFor={`todo${item.id}`} className={styles.li_content}>
                   {item.content}
                 </label>
               </div>
