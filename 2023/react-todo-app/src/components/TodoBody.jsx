@@ -16,6 +16,7 @@ export default function TodoBody({ todoList, onDelete, onUpdate, filter }) {
     onUpdate(updateTodo);
   }
 
+  //==> 중요 !!!
   const filtered = getFilteredItems(todoList, filter) // 선택한 필터에 대한 값만 들어가니까 아래에서 filtered를 map 메소드를 통해 보여주면 해당하는 filter만 보여줌
 
   return (
