@@ -17,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --color-text: #fff;
+  --color-bg: rgba(0, 0, 0, 0.45);
+  --color-hover: #663dff;
+  --color-border: rgba(255, 255, 255, 0.18);
+  --color-placeholder: #f5f5f5c7;
+}
+
+html.dark {
+  --color-text: #000;
+  --color-bg: rgba(255, 255, 255, 0.45);
+  --color-hover: #aebdfc;
+  --color-border: rgba(0, 0, 0, 0.18);
+  --color-placeholder: #3e3e3ec7;
+}
