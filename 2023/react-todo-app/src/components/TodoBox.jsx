@@ -23,8 +23,12 @@ const filters = ["all", "active", "completed"];
 
 export default function TodoBox() {
   //@ 할 일 목록 (localStorage에서 가져오기)
-  const [todoList, setTodoList] = useState(() => readTodoListFromLocalStorage);
+  const [todoList, setTodoList] = useState(() =>
+    readTodoListFromLocalStorage()
+  );
   //- 초기화된 값을 불러오는 경우 콜백함수를 이용해야 불필요한 렌더링을 피할 수 있다. readTodoListFromLocalStorage() 처럼 호출해서 값을 리턴받는 경우 useState가 렌더링될 때마다 호출되어 불필요한 렌더링이 발생한다. 비록 useState 훅 내에서 초기값이 들어오더라도 내부적으로 사용하고 있는 값을 사용하긴 하지만 렌더링이 발생하므로 콜백함수를 사용하는 것이 좋다.
+  //- 위 코드는 인자와 호출하는 내용이 동일하므로, 아래와 같이 축약할 수 있음!!
+  // const [todoList, setTodoList] = useState(readTodoListFromLocalStorage);
 
   //@ 새로운 todo 추가
   const handleAdd = (todo) => setTodoList([...todoList, todo]);
@@ -71,7 +75,7 @@ export default function TodoBox() {
   );
 }
 
-const readTodoListFromLocalStorage = () => {
+function readTodoListFromLocalStorage() {
   const todoList = localStorage.getItem("todoList");
   return todoList ? JSON.parse(todoList) : [];  // todoList가 없다면 빈 배열 반환
 }
