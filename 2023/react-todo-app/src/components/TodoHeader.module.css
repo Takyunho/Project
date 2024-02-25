@@ -5,22 +5,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
-  /* background-color: lightblue; */
 } 
 
 .mode_btn {
   width: 42px;
   height: 100%;
-  /* min-height: 50px; */
   background: none;  
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   cursor: pointer;
-  color: #fff;
+  color: var(--color-text);
   font-size: 1.3rem;
 }
 
@@ -32,7 +28,7 @@
 }
 
 .mode_btn span:hover {
-  color: #663dff;
+  color: var(--color-hover);
 }
 
 
@@ -44,7 +40,7 @@
 .filter_btn {
   width: auto;
   height: 30px;
-  color: #fff;
+  color: var(--color-text);
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -72,7 +68,7 @@
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #663dff;
+  background-color: var(--color-hover);
   border-radius: 5px;
    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
    7px 7px 20px 0px rgba(0,0,0,.1),
@@ -80,7 +76,7 @@
   transition: all 0.3s ease;
 }
 .filter_btn:hover {
-  color: #fff;
+  color: var(--color-text);
 }
 .filter_btn:hover:after {
   left: 0;
