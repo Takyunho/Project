@@ -1,0 +1,11 @@
+.image-box {
+  width: 200px;
+  height: 200px;
+  /* background-color: black; */
+}
+/* 이미지도 박스와 동일한 사이즈로 */
+.image-box img {
+  width: 200px;
+  height: 200px;
+  /* background-color: black; */
+}
