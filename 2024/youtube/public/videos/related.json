@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5Gll8_mOwCc45xBYmR7dLVjkCMs",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 623118,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "--w2nSDw0PjwbAoR3cjjBQMykho",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "oWDrQa6jymc"
+      },
+      "snippet": {
+        "publishedAt": "2013-06-04T21:13:09Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Google I/O 2013 Highlights",
+        "description": "Relive the magic moments of Google I/O 2013, including the keynote, sessions, Developer Sandbox, and After Hours. For all I/O ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/oWDrQa6jymc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/oWDrQa6jymc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/oWDrQa6jymc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-06-04T21:13:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MJZsQYEsOA_PVNFv7AVyRr_7soU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IYDVcriKjsw"
+      },
+      "snippet": {
+        "publishedAt": "2019-01-08T18:04:52Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "LayoutBuilder (Flutter Widget of the Week)",
+        "description": "LayoutBuilder can help you see how big your widget is going to be before you finalize how it's going to look. It's builder function ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IYDVcriKjsw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IYDVcriKjsw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IYDVcriKjsw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-01-08T18:04:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "2tncCRarCF7MnGeKrs97Z1iu0zE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "30yGOxJJ2PQ"
+      },
+      "snippet": {
+        "publishedAt": "2014-02-05T14:02:30Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "DevArt - Art Made with Code: Global Competition Trailer",
+        "description": "DevArt is art made with code, by developers that push the possibilities of creativity and technology. https://g.co/devart Calling all ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/30yGOxJJ2PQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/30yGOxJJ2PQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/30yGOxJJ2PQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-02-05T14:02:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6snT7kVM21DRyZMhFrEB13ic3RY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "T4Uehk3_wlY"
+      },
+      "snippet": {
+        "publishedAt": "2019-01-01T17:30:10Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "FittedBox (Flutter Widget of the Week)",
+        "description": "Most Flutter widgets are boxes. FittedBox helps with managing the space constraints and layout of your boxes. This video is also ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/T4Uehk3_wlY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/T4Uehk3_wlY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/T4Uehk3_wlY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-01-01T17:30:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZVAXtaAupvJlm6AgovRC05CcayE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "iR2O2GPbB0E"
+      },
+      "snippet": {
+        "publishedAt": "2023-05-05T23:00:18Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "What are Large Language Models (LLMs)?",
+        "description": "Learn about Large Language Models (LLMs), a powerful neural network that enables computers to process and generate ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/iR2O2GPbB0E/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/iR2O2GPbB0E/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/iR2O2GPbB0E/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-05-05T23:00:18Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "EmfRcuMmVzSgqno0XM1wGsxXp1s",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wH24YwdayFg"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-12T15:47:03Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Coder: A simple way to make web stuff on Raspberry Pi.",
+        "description": "A little experiment from a couple of us at Google. Coder is a free piece of open source software that turns a Raspberry Pi into a ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wH24YwdayFg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wH24YwdayFg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wH24YwdayFg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-09-12T15:47:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-ZTfoO8TnDtbU-ZLCdYCeNAV7QA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1cOIm7n5V54"
+      },
+      "snippet": {
+        "publishedAt": "2017-08-17T17:00:42Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Transport Tracker Solution for Google Maps",
+        "description": "Create a Transport Tracker to track and manage moving assets like buses or delivery trucks. An Android app captures the location ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1cOIm7n5V54/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1cOIm7n5V54/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1cOIm7n5V54/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-08-17T17:00:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZiVz9Wa0qSVJmdpc1gogKU2rqbU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "gTA-5HM8Zhs"
+      },
+      "snippet": {
+        "publishedAt": "2011-06-09T22:03:35Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Highlights from Google I/O 2011",
+        "description": "Google I/O brings together thousands of developers for two days of deep technical content, focused on building the next ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gTA-5HM8Zhs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gTA-5HM8Zhs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gTA-5HM8Zhs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2011-06-09T22:03:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "8POijYExwZYPjCgQd666y3Hd8Nw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_Z9TRANg4c0"
+      },
+      "snippet": {
+        "publishedAt": "2020-05-06T16:00:26Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Machine Learning Foundations: Ep #1 - What is ML?",
+        "description": "Machine Learning Foundations is a free training course where you'll learn the fundamentals of building machine learned models ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_Z9TRANg4c0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_Z9TRANg4c0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_Z9TRANg4c0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-05-06T16:00:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LpPJ3Oz48zSPVqtCDEi_q3BDY4M",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "EbZVOmnN9Og"
+      },
+      "snippet": {
+        "publishedAt": "2019-11-28T00:04:23Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Don’t miss #AskFlutter live at Flutter Interact ‘19!",
+        "description": "The #AskFlutter Q&A is coming to Flutter Interact!! In between talks at Flutter Interact '19, the Dart and Flutter teams will answer ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EbZVOmnN9Og/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EbZVOmnN9Og/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EbZVOmnN9Og/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-11-28T00:04:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nFrFKdrBSi1Tp69asXK7XXulCyo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kfd-oLypqFI"
+      },
+      "snippet": {
+        "publishedAt": "2018-03-26T12:59:49Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Hamilton app built with Flutter and featured on iOS and Android (Flutter Developer Story)",
+        "description": "Get started with Flutter at https://flutter.io Hamilton is one of the most talked about and best loved Broadway musicals today, and ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kfd-oLypqFI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kfd-oLypqFI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kfd-oLypqFI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-03-26T12:59:49Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "q20qTQ7LAGe2jaRQW5-UtD7wfJw",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "u39rCNFWDEA"
+      },
+      "snippet": {
+        "publishedAt": "2011-10-05T21:44:07Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "The Google Prediction API",
+        "description": "The Prediction API enables you to make your smart apps even smarter. The API accesses Google's machine learning algorithms ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/u39rCNFWDEA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/u39rCNFWDEA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/u39rCNFWDEA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2011-10-05T21:44:07Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WaqbDY7FbkWM6iaTb6-CARpVjY4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "X8v1GWzZYJ4"
+      },
+      "snippet": {
+        "publishedAt": "2016-11-15T15:02:20Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "A.I. Experiments: Quick, Draw!",
+        "description": "Check out https://g.co/aiexperiments to learn more. This is a game built with machine learning. You draw, and a neural network ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/X8v1GWzZYJ4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/X8v1GWzZYJ4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/X8v1GWzZYJ4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-11-15T15:02:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "34C6npYATgRMCaaTOPEfChemrXE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "J1gE9xvph-A"
+      },
+      "snippet": {
+        "publishedAt": "2018-10-09T17:05:42Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "PageView (Flutter Widget of the Week)",
+        "description": "If you like having one great looking screen on Flutter, imagine what having a bunch of swipeable screens would be like!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J1gE9xvph-A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J1gE9xvph-A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J1gE9xvph-A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-10-09T17:05:42Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0DiX6K8DEPwULA2AzJy3XlkxRjI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "cuduUHOwPs0"
+      },
+      "snippet": {
+        "publishedAt": "2017-09-04T19:42:57Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Aaron Oertel: From Business School Drop Out to Junior Android Developer",
+        "description": "Confused by which path to take for his career, Aaron made a risky decision to drop out of Business school to pursue his passion of ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cuduUHOwPs0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cuduUHOwPs0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cuduUHOwPs0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-09-04T19:42:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iHDUIT9Y4cOpKy2j2IB7_LRM5W4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "vydTPnIjAHI"
+      },
+      "snippet": {
+        "publishedAt": "2013-02-26T16:03:06Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Google+ Sign-In: Boost Engagement &amp; Installs",
+        "description": "Learn how Google+ Sign-In provides a simple, trusted, and secure experience for your users.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/vydTPnIjAHI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/vydTPnIjAHI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/vydTPnIjAHI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-02-26T16:03:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_qTHdwNcYP0bUdqW5J2LJcwws-o",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "l-YO9CmaSUM"
+      },
+      "snippet": {
+        "publishedAt": "2019-09-17T19:11:50Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "How is Flutter different for app development",
+        "description": "In this video, hear Martin Aguinis from the Flutter team discuss what goes on under the hood when you create apps with Flutter ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/l-YO9CmaSUM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/l-YO9CmaSUM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/l-YO9CmaSUM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-09-17T19:11:50Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yJKQy6DSKzC3IRfG3EEigEykkcg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yEEVALqc-M4"
+      },
+      "snippet": {
+        "publishedAt": "2016-08-18T16:52:38Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Marking up the world with Google&#39;s beacon platform",
+        "description": "Google's beacon platform allows cities like Amsterdam to build a powerful beacon networks, associating data with beacons and ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yEEVALqc-M4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yEEVALqc-M4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yEEVALqc-M4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-08-18T16:52:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QWr-LTHcRI8g7o0V3BMQxhAYUGM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "z5iw2SeFx2M"
+      },
+      "snippet": {
+        "publishedAt": "2018-08-28T17:02:30Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Wrap (Flutter Widget of the Week)",
+        "description": "When you run out of room in your rows and columns, try Wrap instead! The Wrap widget lays out its children like a row or column, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z5iw2SeFx2M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z5iw2SeFx2M/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z5iw2SeFx2M/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-08-28T17:02:30Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nunx20B8sl-ZORLOT6K3Xa_aCIk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "-F-TQJtbFMs"
+      },
+      "snippet": {
+        "publishedAt": "2017-02-24T23:11:37Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Highlights from the 2017 TensorFlow Dev Summit",
+        "description": "Thousands of people from the TensorFlow community participated in the inaugural TensorFlow Dev Summit. Watch the keynote ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-F-TQJtbFMs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-F-TQJtbFMs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-F-TQJtbFMs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-02-24T23:11:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BJfaw59J_e9rHbzBNLqenbTK0FU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Ut3Hvbvs1bs"
+      },
+      "snippet": {
+        "publishedAt": "2015-06-03T18:52:22Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Introducing the Android Nanodegree",
+        "description": "Want to learn how to develop Android apps, on your own time at your own pace? We have a suite of self-paced online courses ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Ut3Hvbvs1bs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Ut3Hvbvs1bs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Ut3Hvbvs1bs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-06-03T18:52:22Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "YK4vjcWF0l82sRxurwCr6SxDbuA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "CkwN_6nmSuw"
+      },
+      "snippet": {
+        "publishedAt": "2015-05-14T21:08:41Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Chrome Dev Summit 2014 Highlights",
+        "description": "Chrome Dev Summit 2014 provided an opportunity to connect with Chrome Engineers and other leading developers over a ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CkwN_6nmSuw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CkwN_6nmSuw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CkwN_6nmSuw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-05-14T21:08:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0MSx-X041tbK5alE9LOPxAIOZvM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "QPhXL1Im7ds"
+      },
+      "snippet": {
+        "publishedAt": "2016-05-26T23:16:15Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Google I/O 2016 Highlights",
+        "description": "7000+ developers descended on Google's backyard at Shoreline Amphitheatre in Mountain View, CA for Google I/O, our annual ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/QPhXL1Im7ds/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/QPhXL1Im7ds/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/QPhXL1Im7ds/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2016-05-26T23:16:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nTnIo12aVmj8_eHs13pwHWJ9PoU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "L-lMnhiAzEw"
+      },
+      "snippet": {
+        "publishedAt": "2014-04-16T16:28:54Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Google Design Minutes — Glass: Make it simple",
+        "description": "Isabelle Olson talks about the focus her team put into making Glass simple, and how simplicity guided all the decisions they made.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/L-lMnhiAzEw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/L-lMnhiAzEw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/L-lMnhiAzEw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2014-04-16T16:28:54Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "bHJNphZdmjQmquiB_zmUc9q7j2E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "2IGPfP4I9Do"
+      },
+      "snippet": {
+        "publishedAt": "2013-09-06T19:32:28Z",
+        "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+        "title": "Benefits of Google Cloud Platform",
+        "description": "Rovio, Leanplum, R/GA, Q42, Webfilings, Shutterfly, Brightcove, Appscale and more discuss why Google Cloud Platform was the ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2IGPfP4I9Do/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2IGPfP4I9Do/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2IGPfP4I9Do/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Google for Developers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-09-06T19:32:28Z"
+      }
+    }
+  ]
+}
