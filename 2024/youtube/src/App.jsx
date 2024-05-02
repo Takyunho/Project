@@ -1,9 +1,11 @@
-
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-      시작
+      {/* search header */}
+      {/* outlet */}
+      <Outlet />
     </>
   );
 }
