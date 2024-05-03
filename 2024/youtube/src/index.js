@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // react-router-dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
+import App from "./App.jsx";
 import NotFound from "./pages/NotFound";
 import VideoDetail from "./pages/VideoDetail";
 import Videos from "./pages/Videos";
@@ -13,7 +13,7 @@ import Videos from "./pages/Videos";
 const router = createBrowserRouter([
   {
     path: "/",
-    component: <App />,
+    element: <App />,
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Videos /> },
@@ -27,9 +27,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <RouterProvider router={router} />
   </>
 );
 
