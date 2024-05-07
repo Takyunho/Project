@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import VideoCard from "../components/VideoCard";
-import axios from "axios";
+import { search } from "../api/youtube";
+import FakeYoutube from "../api/fakeYoutube";
 
 export default function Videos() {
   // useParams()를 사용하여 검색 키워드 가져오기
@@ -13,23 +14,12 @@ export default function Videos() {
     data: videos,
   } = useQuery({
     queryKey: ["videos", keyword],
-    queryFn: async () => {
-      console.log("데이터 통신..");
-      
-      return axios
-        .get(`/videos/${keyword ? "search" : "popular"}.json`)
-        .then((res) => res.data.items);
-        
-    },
+    queryFn: () => { 
+      const youtube = new FakeYoutube();
+      return youtube.search(keyword);
+    }
   });
 
-  // useEffect(() => {
-  //   console.log(videos)
-  // }, [videos])
-
-  useEffect(() => {
-    console.log(keyword)
-  }, [keyword])
 
   return (
     <>
