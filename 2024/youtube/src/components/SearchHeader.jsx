@@ -7,10 +7,7 @@ export default function SearchHeader() {
   const navigate = useNavigate();
   const [text, setText] = useState('');
 
-  const handleSearch = (e) => {
-    const value = e.target.value;
-    setText(value);
-  }
+  const handleSearch = (e) => setText(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
