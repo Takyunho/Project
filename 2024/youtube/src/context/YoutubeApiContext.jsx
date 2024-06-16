@@ -1,11 +1,13 @@
 import { createContext, useContext } from "react";
 import Youtube from "../api/youtube";
-import FakeYoutube from "../api/fakeYoutube";
+import YoutubeClient from "../api/youtubeClient"; //^ 실제 데이터용
+import FakeYoutubeClient from "../api/fakeYoutubeClient"; //^ 테스트용 
 
 export const YoutubeApiContext = createContext();
 
-const youtube = new Youtube() // Youtube 클래스 인스턴스 생성
-// const youtube = new FakeYoutube();
+// const client = new YoutubeClient(); //^ 실제 데이터를 받아오는 인스턴스
+const client = new FakeYoutubeClient(); //^ 테스트용 데이터를 받아오는 인스턴스
+const youtube = new Youtube(client);
 
 export function YoutubeApiProvider({ children }) {
   return <YoutubeApiContext.Provider value={{youtube}}>
