@@ -13,6 +13,7 @@
     "react-icons": "^5.2.0",
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
