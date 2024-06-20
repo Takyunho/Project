@@ -4,12 +4,22 @@ import axios from "axios";
 export default class FakeYoutubeClient {
   constructor() {}
 
-  async search() {
-    return axios.get('/videos/search.json');
+  async search({ params }) {
+    // 1. 삼항연산자 사용
+    // return params.channelId
+    //   ? axios.get("/videos/related.json")
+    //   : axios.get("/videos/search.json");
+
+    // 2. 삼항연산자로 json 파일이름만 바꾸기
+    return axios.get(`/videos/${params.channelId ? 'related' : 'search'}.json`);
   }
 
   async videos() {
     return axios.get('/videos/popular.json');
+  }
+
+  async channels() {
+    return axios.get('/videos/channel.json');
   }
 
 
