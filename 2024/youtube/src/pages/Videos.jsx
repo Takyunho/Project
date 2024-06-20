@@ -25,7 +25,7 @@ export default function Videos() {
 
   return (
     <>
-      <div>Videos {keyword ? `🔎 ${keyword}` : "키워드 없음"}</div>
+      {/* 단순하게 이미지만 뿌려주는 경우에는 아래와 같이 loading, error처리 필요 없어서 안써도 됨 */}
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong 🌀</p>}
       {videos && <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 gap-y-4 p-2">
