@@ -5,12 +5,17 @@ import VideoCard from './VideoCard';
 
 export default function RelatedVideos({ id }) {
   const { youtube } = useYoutubeApi();
-  const { error, isLoading, data: relatedVideos } = useQuery({
-    queryKey: ['relatedVideos', id],
+  const {
+    error,
+    isLoading,
+    data: relatedVideos,
+  } = useQuery({
+    queryKey: ["relatedVideos", id],
     queryFn: () => {
       return youtube.relatedVideos(id);
-    }
-  })
+    },
+    staleTime: 1000 * 60 * 5,
+  });
 
 
   return (

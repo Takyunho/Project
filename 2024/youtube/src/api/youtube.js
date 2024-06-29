@@ -1,5 +1,3 @@
-import axios from "axios";
-
 //-> 실제 데이터를 받아오는 api (postman 참고)
 export default class Youtube {
   //^ 클라이언트 부분을 외부로부터 주입받아서 코드의 중복 줄이기

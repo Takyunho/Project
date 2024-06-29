@@ -20,7 +20,7 @@ export default function VideoDetail() {
           width="100%"
           height="640"
           src={`http://www.youtube.com/embed/${video.id}`}
-          title={video.snippet.title}
+          title={title}
           // frameBorder="0"  // HTML5에서는 iframe의 frameBorder속성값은 더이상 지원하지 않는다고 한다
         ></iframe>
         <div className='p-4'>
