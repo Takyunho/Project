@@ -12,8 +12,8 @@ export default function VideoDetail() {
   // 채널 썸네일 받아오기
 
   return (
-    <section>
-      <article>
+    <section className='flex flex-col lg:flex-row'>
+      <article className='basis-4/6'>
         <iframe
           id="player"
           type="text/html"
@@ -23,14 +23,14 @@ export default function VideoDetail() {
           title={video.snippet.title}
           // frameBorder="0"  // HTML5에서는 iframe의 frameBorder속성값은 더이상 지원하지 않는다고 한다
         ></iframe>
-        <div>
-          <h2>{title}</h2>
+        <div className='p-4'>
+          <h2 className='text-xl font-bold'>{title}</h2>
           <ChannelInfo id={channelId} name={channelTitle}></ChannelInfo>
           {/* pre 태그를 이용해서 여백이나 공백, 스페이스, 엔터가 적절히 렌더링 되도록 한다. */}
-          <pre>{description}</pre>
+          <pre className='whitespace-pre-wrap'>{description}</pre>
         </div>
       </article>
-      <section>
+      <section className='basis-2/6'>
         <RelatedVideos id={channelId} />
       </section>
     </section>
