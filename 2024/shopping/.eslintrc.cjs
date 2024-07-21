@@ -6,10 +6,18 @@ module.exports = {
     '@electron-toolkit',
     '@electron-toolkit/eslint-config-prettier',
     // 추가
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier'
   ],
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'react-refresh'],
   rules: {
-    'react/prop-types': 'off' // prop-types를 사용하지 않을 경우
+    'react/prop-types': 'off', // prop-types를 사용하지 않을 경우
+    'prettier/prettier': [
+      'error',
+      {
+        arrowParens: 'avoid'
+      }
+    ]
   }
 }
