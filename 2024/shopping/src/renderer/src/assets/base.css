@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --color-background: #1b1b1f;
 }
@@ -10,13 +14,19 @@
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
+#root {
+  /* 기본적으로 너비를 가득 채우지만, max-width가 2xl을 넘지 않도록 정해준다. */
+  @apply w-full max-w-screen-2xl p-1;
 }
-
 body {
   min-height: 100vh;
-  background: var(--color-background);
+  overflow: hidden;
+  background-image: url('./wavy-lines.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--color-background);
+  user-select: none;
+  color: #fff;
   line-height: 1.6;
   font-family:
     Inter,
@@ -34,4 +44,15 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @apply flex flex-col items-center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  /* color: inherit; */
+  text-decoration: none;
 }
