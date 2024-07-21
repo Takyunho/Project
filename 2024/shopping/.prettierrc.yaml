@@ -1,0 +1,8 @@
+singleQuote: true
+semi: false
+printWidth: 100
+trailingComma: none
+singleAttributePerLine: true
+bracketSameLine: false
+endOfLine: 'lf'
+arrowParens: 'avoid'
