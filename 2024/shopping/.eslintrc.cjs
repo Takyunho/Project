@@ -12,12 +12,12 @@ module.exports = {
   ],
   plugins: ['react', 'prettier', 'react-refresh'],
   rules: {
-    'react/prop-types': 'off', // prop-types를 사용하지 않을 경우
-    'prettier/prettier': [
-      'error',
-      {
-        arrowParens: 'avoid'
-      }
-    ]
+    'react/prop-types': 'off' // prop-types를 사용하지 않을 경우
+    // 'prettier/prettier': [
+    //   'error',
+    //   {
+    //     arrowParens: 'avoid'
+    //   }
+    // ]
   }
 }
