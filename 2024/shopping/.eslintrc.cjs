@@ -8,5 +8,8 @@ module.exports = {
     // 추가
     'plugin:prettier/recommended'
   ],
-  plugins: ['react', 'prettier']
+  plugins: ['react', 'prettier'],
+  rules: {
+    'react/prop-types': 'off' // prop-types를 사용하지 않을 경우
+  }
 }
