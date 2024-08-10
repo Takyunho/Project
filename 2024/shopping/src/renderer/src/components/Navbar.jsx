@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaShopify } from 'react-icons/fa'
 import { TbPencilPlus } from 'react-icons/tb'
+import { login } from '@renderer/api/firebase'
 
 export default function Navbar() {
   return (
@@ -21,7 +22,7 @@ export default function Navbar() {
         >
           <TbPencilPlus />
         </Link>
-        <button>Login</button>
+        <button onClick={login}>Login</button>
       </nav>
     </header>
   )
