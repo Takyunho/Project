@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  onAuthStateChanged
+} from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -13,31 +19,42 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
+googleProvider.setCustomParameters({ prompt: 'select_account' })
 
 // google oauth login
-export function login() {
-  signInWithPopup(auth, googleProvider)
+export async function login() {
+  return signInWithPopup(auth, googleProvider)
     .then(result => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result)
-      // console.log(credential)
-      // const token = credential.accessToken
-      // The signed-in user info.
       const user = result.user
       console.log(user)
-      // IdP data available using getAdditionalUserInfo(result)
-      // ...
+      return user
     })
     .catch(error => {
       console.log(error)
-      // Handle Errors here.
-      // const errorCode = error.code
-      // const errorMessage = error.message
-      // The email of the user's account used.
-      // const email = error.customData.email
-      // The AuthCredential type that was used.
-      // const credential = GoogleAuthProvider.credentialFromError(error)
-      // ...
     })
 }
-googleProvider.setCustomParameters({ prompt: 'select_account' })
+
+// logout
+export async function logout() {
+  return signOut(auth).then(() => {
+    console.log('logout')
+    console.log(auth)
+    return null
+  })
+}
+
+/**
+ * - 동작 순서
+ * 1. 컴포넌트 마운트
+ * 2. useEffect 동작
+ * 3. onUserStateChanged 호출하면서 인자로 (user) => setUser(user) 콜백함수 전달
+ * 4. onAuthStateChanged 호출
+ * 5. onAuthStateChanged가 로그인 상태를 확인해 user객체 또는 null값을 가져옴
+ * 6. 확인된 user객체 또는 null값을 callback함수인 (user) => setUser(user)의 인자에 전달
+ * 7. setUser(user)에 user객체 또는 null값이 대입됨
+ */
+export function onUserStateChange(callback) {
+  onAuthStateChanged(auth, user => {
+    callback(user) // user가 있으면 user, 없으면 null -> onUserStateChange의 callback으로 전달
+  })
+}
