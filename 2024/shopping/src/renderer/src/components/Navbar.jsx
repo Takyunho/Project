@@ -3,6 +3,7 @@ import { FaShopify } from 'react-icons/fa'
 import { TbPencilPlus } from 'react-icons/tb'
 import { login, logout, onUserStateChange } from '@renderer/api/firebase'
 import { useEffect, useState } from 'react'
+import User from '@renderer/components/User'
 
 export default function Navbar() {
   const [user, setUser] = useState() // null or undefined
@@ -38,6 +39,7 @@ export default function Navbar() {
         >
           <TbPencilPlus />
         </Link>
+        {user && <User user={user} />}
         {!user && <button onClick={login}>Login</button>}
         {user && <button onClick={logout}>Logout</button>}
       </nav>
