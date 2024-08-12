@@ -22,12 +22,12 @@ const googleProvider = new GoogleAuthProvider()
 googleProvider.setCustomParameters({ prompt: 'select_account' })
 
 // google oauth login
-export async function login() {
-  return signInWithPopup(auth, googleProvider)
+export function login() {
+  signInWithPopup(auth, googleProvider)
     .then(result => {
       const user = result.user
       console.log(user)
-      return user
+      // return user
     })
     .catch(error => {
       console.log(error)
@@ -35,8 +35,8 @@ export async function login() {
 }
 
 // logout
-export async function logout() {
-  return signOut(auth).then(() => {
+export function logout() {
+  signOut(auth).then(() => {
     console.log('logout')
     console.log(auth)
     return null
