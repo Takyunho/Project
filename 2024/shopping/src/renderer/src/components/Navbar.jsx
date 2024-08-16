@@ -14,11 +14,12 @@ export default function Navbar() {
      * 로그인 세션이 남아있지 않으면 null이 전달된다.
      * onUserStateChange의 callback으로 전달된 user의 값으로 setUser를 호출한다.
      */
-    // onUserStateChange(user => {
-    //   setUser(user)
-    // })
+    onUserStateChange(user => {
+      console.log(user)
+      setUser(user)
+    })
     //- 위의 코드를 아래처럼 간결하게 작성 가능(인자가 동일하면 참조값만 전달 가능)
-    onUserStateChange(setUser)
+    // onUserStateChange(setUser)
   }, [])
 
   return (

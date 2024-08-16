@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged
 } from 'firebase/auth'
+import { get, getDatabase, ref } from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -20,26 +21,19 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 googleProvider.setCustomParameters({ prompt: 'select_account' })
+const database = getDatabase(app)
 
 // google oauth login
 export function login() {
-  signInWithPopup(auth, googleProvider)
-    .then(result => {
-      const user = result.user
-      console.log(user)
-      // return user
-    })
-    .catch(error => {
-      console.log(error)
-    })
+  signInWithPopup(auth, googleProvider).catch(error => {
+    console.log(error)
+  })
 }
 
 // logout
 export function logout() {
-  signOut(auth).then(() => {
-    console.log('logout')
-    console.log(auth)
-    return null
+  signOut(auth).catch(error => {
+    console.log(error)
   })
 }
 
@@ -54,7 +48,23 @@ export function logout() {
  * 7. setUser(user)에 user객체 또는 null값이 대입됨
  */
 export function onUserStateChange(callback) {
-  onAuthStateChanged(auth, user => {
-    callback(user) // user가 있으면 user, 없으면 null -> onUserStateChange의 callback으로 전달
+  onAuthStateChanged(auth, async user => {
+    //# 1. 사용자가 있는 경우에 (로그인한 경우)
+    const updatedUser = user ? await adminUser(user) : null // 사용자가 있는 경우에만 호출하기
+    callback(updatedUser) // user가 있으면 user, 없으면 null -> onUserStateChange의 callback으로 전달
   })
+}
+
+async function adminUser(user) {
+  //# 2. 사용자가 어드민 권한을 가지고 있는지 확인한다.
+  //# 3. 어드민 권한이 있는 경우 {...user, isAdmin: true}를 반환한다.
+  return get(ref(database, 'admins')) //
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        const admins = snapshot.val()
+        const isAdmin = admins.includes(user.uid)
+        return { ...user, isAdmin }
+      }
+      return user // admin이 없는 경우
+    })
 }
